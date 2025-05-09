@@ -1,6 +1,8 @@
 @import "tailwindcss";
 
 :root {
+  --font-family-sans: var(--font-manrope), "Manrope Placeholder", system-ui,
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --background: #ffffff;
   --foreground: #171717;
 }
@@ -10,11 +12,15 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --color-ds-gray-100: #1a1a1a;
+  --color-ds-gray-200: #1f1f1f;
+  --color-ds-gray-300: #262626;
+  --color-ds-gray-400: #282828;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #141414;
     --foreground: #ededed;
   }
 }
