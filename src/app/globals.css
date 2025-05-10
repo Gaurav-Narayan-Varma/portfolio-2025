@@ -16,6 +16,8 @@
   --color-ds-gray-200: #1f1f1f;
   --color-ds-gray-300: #262626;
   --color-ds-gray-400: #282828;
+  --color-ds-gray-500: #141414;
+  --color-ds-gray-600:#2b2b2b
 }
 
 @media (prefers-color-scheme: dark) {
