@@ -17,7 +17,10 @@
   --color-ds-gray-300: #262626;
   --color-ds-gray-400: #282828;
   --color-ds-gray-500: #141414;
-  --color-ds-gray-600:#2b2b2b
+  --color-ds-gray-600: #2b2b2b;
+  --color-ds-gray-700: #696969;
+  --color-ds-gray-800: #2b2b2b;
+  --color-ds-gray-900: #303030;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -31,4 +34,41 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Webkit browsers (Chrome, Safari, etc.) */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.5) transparent;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.15s ease-in-out;
 }

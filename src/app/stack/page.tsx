@@ -1,3 +1,3 @@
 export default function Stack() {
-  return <div>Stack</div>;
+  return <div className="animate-fade-in">Stack</div>;
 }

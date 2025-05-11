@@ -1,4 +1,4 @@
-import Sidebar from "@/components/sidebar";
+import Navbar from "@/components/navbar";
 import type { Metadata } from "next";
 import { Manrope } from "next/font/google";
 import "./globals.css";
@@ -21,10 +21,8 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${manrope.className} antialiased cursor-default`}>
         <div className="flex">
-          <Sidebar />
-          <div className="flex flex-col items-center justify-center h-screen">
-            {children}
-          </div>
+          <Navbar />
+          {children}
         </div>
       </body>
     </html>

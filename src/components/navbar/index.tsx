@@ -29,7 +29,7 @@ const connectNavItems = [
     label: "Contact",
   },
   {
-    href: "https://www.linkedin.com/in/gaurav-varma-product-engineer/",
+    href: "https://www.linkedin.com/in/gaurav-varma-fullstack-engineer/",
     icon: "/linkedin.svg",
     label: "LinkedIn",
   },
@@ -44,7 +44,7 @@ export default function Sidebar() {
   const pathname = usePathname();
 
   return (
-    <div className="flex flex-col justify-between h-screen w-[260px] border-r border-ds-gray-300 pt-6 pb-5 px-4.5">
+    <div className="flex flex-col justify-between h-screen min-w-[260px] border-r border-ds-gray-300 pt-6 pb-5 px-4.5">
       <div className="flex flex-col gap-8">
         <div className="flex flex-col gap-9">
           <UserProfileCard />
