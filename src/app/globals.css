@@ -12,11 +12,13 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  /* #1a1a1a => rgb(26, 26, 26) */
   --color-ds-gray-100: #1a1a1a;
   --color-ds-gray-200: #1f1f1f;
   --color-ds-gray-300: #262626;
   --color-ds-gray-400: #282828;
   --color-ds-gray-500: #141414;
+    /* #1a1a1a => rgb(43, 43, 43) */
   --color-ds-gray-600: #2b2b2b;
   --color-ds-gray-700: #696969;
   --color-ds-gray-800: #2b2b2b;
@@ -71,4 +73,16 @@ body {
 
 .animate-fade-in {
   animation: fade-in 0.15s ease-in-out;
+}
+
+.hyperlink {
+  @apply text-[#0fabff] hover:text-[#63c9ff] underline cursor-default;
+}
+
+.page-title {
+  @apply text-white text-[28px] font-medium -tracking-[.84] leading-[36.4px] font-[Inter];
+}
+
+.page-subtitle {
+  @apply text-white/60 font-medium text-base -tracking-[.16] leading-7;
 }

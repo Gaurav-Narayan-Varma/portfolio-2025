@@ -1,0 +1,357 @@
+import { ToolCategory } from "@/types/stackTypes";
+
+export const toolCategories: ToolCategory[] = [
+  {
+    name: "Frontend",
+    tools: [
+      {
+        name: "React",
+        tag: "Build interactive UI",
+        image: "/logos/react-logo.svg",
+        link: "https://react.dev/",
+      },
+      {
+        name: "TypeScript",
+        tag: "Type-safe code",
+        image: "/logos/typescript-logo.png",
+        link: "https://www.typescriptlang.org/",
+      },
+      {
+        name: "Tailwind CSS",
+        tag: "Style without switching files",
+        image: "/logos/tailwind-logo.png",
+        link: "https://tailwindcss.com/",
+      },
+      {
+        name: "Vite",
+        tag: "Blazing fast compile time",
+        image: "/logos/vite-logo.png",
+        link: "https://vite.dev/",
+      },
+      {
+        name: "TanStack Query",
+        tag: "Powerful async state management",
+        image: "/logos/tanstack-logo.jpeg",
+        link: "https://tanstack.com/query/latest",
+      },
+      {
+        name: "Zustand",
+        tag: "Lightweight client state management",
+        image: "/logos/zustand-logo.jpeg",
+        link: "https://zustand-demo.pmnd.rs/",
+      },
+      {
+        name: "Shadcn UI",
+        tag: "Pre-built themes, accessible components",
+        image: "/logos/shadcn-logo.png",
+        link: "https://ui.shadcn.com/",
+      },
+      {
+        name: "TanStack Router",
+        tag: "Type-safe routing",
+        image: "/logos/tanstack-logo.jpeg",
+        link: "https://tanstack.com/router/latest/docs/framework/react/react-native/react-router-react-native.html",
+      },
+      {
+        name: "React Hook Form",
+        tag: "Type-safe form handling",
+        image: "/logos/rhf-logo.svg",
+        link: "https://react-hook-form.com/",
+      },
+      {
+        name: "TipTap",
+        tag: "Rich text editor",
+        image: "/logos/tiptap-logo.png",
+        link: "https://tiptap.dev/",
+      },
+      {
+        name: "Radix UI",
+        tag: "Composable UI Primitives",
+        image: "/logos/radix-logo.png",
+        link: "https://www.radix-ui.com/",
+      },
+      {
+        name: "Redux",
+        tag: "Classic client state management",
+        image: "/logos/redux-logo.jpeg",
+        link: "https://redux.js.org/",
+      },
+    ],
+  },
+  {
+    name: "Backend",
+    tools: [
+      {
+        name: "Node.js",
+        tag: "Run JavaScript everywhere",
+        image: "/logos/nodejs-logo.png",
+        link: "https://nodejs.org/en",
+      },
+      {
+        name: "TypeScript",
+        tag: "Type-safe code",
+        image: "/logos/typescript-logo.png",
+        link: "https://www.typescriptlang.org/",
+      },
+      {
+        name: "Express",
+        tag: "Fast, unopinionated web framework",
+        image: "/logos/expressjs-logo.jpg",
+        link: "https://expressjs.com/",
+      },
+      {
+        name: "PostgreSQL",
+        tag: "Scalable relational database",
+        image: "/logos/postgresql-logo.png",
+        link: "https://www.postgresql.org/",
+      },
+      {
+        name: "Prisma",
+        tag: "Type-safe ORM",
+        image: "/logos/prisma-logo.jpg",
+        link: "https://www.prisma.io/",
+      },
+      {
+        name: "BullMQ",
+        tag: "Background job processing",
+        image: "/logos/bullmq-logo2.png",
+        link: "https://www.bullmq.io/",
+      },
+      {
+        name: "Redis",
+        tag: "In-memory data store",
+        image: "/logos/redis-logo.png",
+        link: "https://redis.io/",
+      },
+      {
+        name: "Socket.IO",
+        tag: "Real-time communication",
+        image: "/logos/socket-io-logo.png",
+        link: "https://socket.io/",
+      },
+      {
+        name: "Jest",
+        tag: "JavaScript testing framework",
+        image: "/logos/jest-logo.png",
+        link: "https://jestjs.io/",
+      },
+    ],
+  },
+  {
+    name: "Full Stack",
+    tools: [
+      {
+        name: "Next.js",
+        tag: "Ultra-fast SSR React framework",
+        image: "/logos/nextjs-logo.png",
+        link: "https://nextjs.org/",
+      },
+      {
+        name: "tRPC",
+        tag: "End-to-end type-safe APIs",
+        image: "/logos/trpc-logo.png",
+        link: "https://trpc.io/",
+      },
+      {
+        name: "Zod",
+        tag: "TypeScript-first schema validation",
+        image: "/logos/zod-logo.png",
+        link: "https://zod.dev/",
+      },
+      {
+        name: "Turborepo",
+        tag: "Effortless monorepos",
+        image: "/logos/turborepo-logo.png",
+        link: "https://turborepo.com/",
+      },
+      {
+        name: "Laravel",
+        tag: "PHP-based full stack framework",
+        image: "/logos/laravel-logo.jpg",
+        link: "https://laravel.com/",
+      },
+      {
+        name: "Ruby on Rails",
+        tag: "Ruby-based full stack framework",
+        image: "/logos/rails-logo.jpg",
+        link: "https://rubyonrails.org/",
+      },
+    ],
+  },
+  {
+    name: "Infrastructure",
+    tools: [
+      {
+        name: "Docker",
+        tag: "Container application development",
+        image: "/logos/docker-logo.png",
+        link: "https://www.docker.com/",
+      },
+      {
+        name: "Render",
+        tag: "Modern cloud hosting platform",
+        image: "/logos/render-logo.jpg",
+        link: "https://render.com/",
+      },
+      {
+        name: "Amazon S3",
+        tag: "Cloud object storage",
+        image: "/logos/s3-logo.png",
+        link: "https://aws.amazon.com/s3/",
+      },
+      {
+        name: "Algolia",
+        tag: "Search as a service",
+        image: "/logos/algolia-logo.png",
+        link: "https://www.algolia.com/",
+      },
+      {
+        name: "Vercel",
+        tag: "One-click deploys",
+        image: "/logos/vercel-logo.png",
+        link: "https://vercel.com/",
+      },
+      {
+        name: "Beekeeper Studio",
+        tag: "Modern database manager",
+        image: "/logos/beekeeper-logo.svg",
+        link: "https://www.beekeeperstudio.io/",
+      },
+      {
+        name: "GitHub Actions",
+        tag: "CI/CD pipelines",
+        image: "/logos/github-actions-logo.png",
+        link: "https://github.com/features/actions",
+      },
+      {
+        name: "Twilio",
+        tag: "Communication APIs",
+        image: "/logos/twilio-logo.png",
+        link: "https://www.twilio.com/",
+      },
+      {
+        name: "Amazon EC2",
+        tag: "Unmatched VM control",
+        image: "/logos/ec2-logo.png",
+        link: "https://aws.amazon.com/ec2/",
+      },
+      {
+        name: "Coolify",
+        tag: "Self-hosting with superpowers",
+        image: "/logos/coolify-logo.png",
+        link: "https://coolify.io/",
+      },
+    ],
+  },
+  {
+    name: "Monitoring and Analytics",
+    tools: [
+      {
+        name: "Segment",
+        tag: "Analytics platform",
+        image: "/logos/segment-logo.png",
+        link: "https://segment.com/",
+      },
+      {
+        name: "Fullstory",
+        tag: "Know UX down to the click",
+        image: "/logos/fullstory-logo.png",
+        link: "https://www.fullstory.com/",
+      },
+      {
+        name: "Sentry",
+        tag: "Error tracking",
+        image: "/logos/sentry-logo.png",
+        link: "https://sentry.io/",
+      },
+    ],
+  },
+  {
+    name: "Productivity",
+    tools: [
+      {
+        name: "Loom",
+        tag: "Because every PR deserves a demo",
+        image: "/logos/loom-logo.png",
+        link: "https://www.loom.com/",
+      },
+      {
+        name: "Slack",
+        tag: "Team communication",
+        image: "/logos/slack-logo.png",
+        link: "https://slack.com/",
+      },
+      {
+        name: "Github",
+        tag: "Collaborate. Review. Ship.",
+        image: "/logos/github-logo.png",
+        link: "https://github.com/",
+      },
+      {
+        name: "Figma",
+        tag: "Product design",
+        image: "/logos/figma-logo.png",
+        link: "https://www.figma.com/",
+      },
+      {
+        name: "Cursor AI",
+        tag: "AI-powered building",
+        image: "/logos/cursor-logo.png",
+        link: "https://www.cursor.com/",
+      },
+      {
+        name: "Notion",
+        tag: "Docs",
+        image: "/logos/notion-logo.png",
+        link: "https://www.notion.so/",
+      },
+      {
+        name: "Linear",
+        tag: "Task managment",
+        image: "/logos/linear-logo.png",
+        link: "https://linear.app/",
+      },
+      {
+        name: "Spotify",
+        tag: "Vibes",
+        image: "/logos/spotify-logo.png",
+        link: "https://open.spotify.com/",
+      },
+      {
+        name: "Screen Studio",
+        tag: "Video market new features",
+        image: "/logos/screen-studio-logo.png",
+        link: "https://screenstudio.com/",
+      },
+      {
+        name: "Hey",
+        tag: "A fresh take on email",
+        image: "/logos/hey-logo.png",
+        link: "https://hey.com/",
+      },
+    ],
+  },
+  {
+    name: "Hardware",
+    tools: [
+      {
+        name: `16" MacBook Pro`,
+        tag: "M3 Pro Chip / 36GB RAM / 1TB SSD",
+        image: "/logos/apple-logo.png",
+        link: "https://support.apple.com/en-us/117737",
+      },
+      {
+        name: "NuPhy Gem80 Keyboard",
+        tag: "Built to thock",
+        image: "/logos/nuphy-logo.png",
+        link: "https://nuphy.com/collections/keyboards/products/gem80?variant=40754423201901",
+      },
+      {
+        name: "MX Vertical Mouse",
+        tag: "Keeps wrist pain away",
+        image: "/logos/logitech-logo.png",
+        link: "https://www.logitech.com/en-us/shop/p/mx-vertical-ergonomic-mouse.910-005447",
+      },
+    ],
+  },
+];
