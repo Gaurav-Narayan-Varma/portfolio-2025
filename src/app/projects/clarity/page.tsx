@@ -1,7 +1,6 @@
 import HorizontalRule from "@/components/projects/horizontal-rule";
 import MediaDisplay from "@/components/projects/media-display";
 import SectionOverview from "@/components/projects/section-overview";
-import StatCard from "@/components/projects/stat-card";
 
 type Stat = {
   stat: string;
@@ -40,20 +39,11 @@ export default function Clarity() {
       />
 
       {/* Stats */}
-      <img src="/clarity-project/stat-cards.png" alt="stat cards" className="w-full" />
-      {/* <div className="flex flex-col gap-2.5">
-        <div className="flex gap-7.5 p-5 h-[382.28px]">
-          {stats.map((stat) => (
-            <StatCard
-              key={stat.name}
-              stat={stat.stat}
-              name={stat.name}
-              description={stat.description}
-              />
-          ))}
-        </div>
-        <div className="caption-text">High level stats</div>
-      </div> */}
+      <img
+        src="/clarity-project/stat-cards.png"
+        alt="stat cards"
+        className="w-full"
+      />
 
       <HorizontalRule />
 
