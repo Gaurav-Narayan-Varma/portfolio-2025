@@ -7,7 +7,7 @@ export default function ContactSection() {
         <div className="font-[Inter] text-white font-medium text-4xl -tracking-[.72] leading-[45px]">
           Want to work together?
         </div>
-        <div className="font-medium text-base -tracking-[.16] leading-7 text-white/60">
+        <div className="description-text">
           Reach out, let&apos;s chat.
         </div>
       </div>

@@ -86,3 +86,11 @@ body {
 .page-subtitle {
   @apply text-white/60 font-medium text-base -tracking-[.16] leading-7;
 }
+
+.description-text {
+  @apply text-base text-white/60 font-medium leading-7 -tracking-[0.16px];
+}
+
+.caption-text {
+  @apply text-white/50 text-sm leading-[21px] font-[Inter] text-center italic
+}

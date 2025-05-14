@@ -10,7 +10,7 @@ export default function IntroSection() {
             I build <span className="text-ds-gray-700">software.</span>
           </div>
         </div>
-        <div className="text-base text-white/60 font-medium leading-7 -tracking-[0.16px]">
+        <div className="description-text">
           I&apos;ve built products from 0 to 1 that have impacted thousands of
           peoples&apos; lives. I care deeply about craft, product excellence,
           and the impact of my work. Currently, I build as a founding engineer

@@ -6,11 +6,13 @@ export const projects: Project[] = [
     description: "Turn meetings into momentum",
     overviewImage: "/clarity-project/clarity-ov.png",
     logoImage: "/logos/clarity-logo.jpeg",
+    slug: "clarity",
   },
   {
     name: "Yhangry",
     description: "Bringing restaurant magic home",
     overviewImage: "/clarity-project/clarity-ov.png",
     logoImage: "/logos/yhangry-logo.jpeg",
+    slug: "yhangry",
   },
 ];
