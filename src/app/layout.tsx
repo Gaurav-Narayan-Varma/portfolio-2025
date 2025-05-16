@@ -1,6 +1,6 @@
 import Navbar from "@/components/navbar";
 import type { Metadata } from "next";
-import { Inter, Manrope } from "next/font/google";
+import { Manrope } from "next/font/google";
 import "./globals.css";
 
 /**
@@ -9,7 +9,6 @@ import "./globals.css";
 const manrope = Manrope({
   subsets: ["latin"],
 });
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Gaurav Varma",

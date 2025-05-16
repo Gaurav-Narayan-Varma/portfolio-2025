@@ -38,19 +38,18 @@ export default function Clarity() {
         paragraph1="I've spent the past year building the future of meeting intelligence at Clarity in SF. We're focused on helping high-performance operators capture and leverage every detail from their meetings through AI-powered transcription, actionable insights, and seamless integrations."
       />
 
-      {/* Stats */}
-      <img
+      <MediaDisplay
         src="/clarity-project/stat-cards.png"
-        alt="stat cards"
-        className="w-full"
+        caption="High level stats"
+        video={false}
       />
 
       <HorizontalRule />
 
       <SectionOverview
         title="Meeting Timeline"
-        paragraph1="Before I joined, the product allowed users to record meetings, view transcripts, and access a list of all their meetings from the homepage. However, users often felt overwhelmed by the need to switch between their meeting calendars and our app to manage their schedules. To address this, I developed an in-app calendar that seamlessly integrates with their Google Calendars."
-        paragraph2="We later observed that users were frustrated with the redundancy of having both a calendar view and a list view of meetings side by side. To streamline the experience, we merged the two views into a single unified meeting timeline that combines the strengths of both."
+        paragraph1="Before I joined, the product let users record meetings, view transcripts, and access a homepage list of meetings. But many found it frustrating to switch between their calendars and our app. To solve this, I built an in-app calendar that syncs with Google Calendar."
+        paragraph2="Later, we noticed users were frustrated by the redundant side-by-side calendar and list views. To streamline things, we merged them into a unified meeting timeline that combined the best of both."
       />
 
       <MediaDisplay
