@@ -1,12 +1,16 @@
 import Navbar from "@/components/navbar";
 import type { Metadata } from "next";
-import { Manrope } from "next/font/google";
+import { Inter, Manrope } from "next/font/google";
 import "./globals.css";
 
 /**
  * Call Manrope and Inter here to self host fonts, must be assigned to a variable
  */
 const manrope = Manrope({
+  subsets: ["latin"],
+});
+
+const inter = Inter({
   subsets: ["latin"],
 });
 

@@ -194,6 +194,12 @@ export const toolCategories: ToolCategory[] = [
         link: "https://render.com/",
       },
       {
+        name: "Stripe",
+        tag: "Payment processing",
+        image: "/logos/stripe-logo.png",
+        link: "https://stripe.com/",
+      },
+      {
         name: "Amazon S3",
         tag: "Cloud object storage",
         image: "/logos/s3-logo.png",

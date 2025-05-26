@@ -18,7 +18,7 @@
   --color-ds-gray-300: #262626;
   --color-ds-gray-400: #282828;
   --color-ds-gray-500: #141414;
-    /* #1a1a1a => rgb(43, 43, 43) */
+  /* #1a1a1a => rgb(43, 43, 43) */
   --color-ds-gray-600: #2b2b2b;
   --color-ds-gray-700: #696969;
   --color-ds-gray-800: #2b2b2b;
@@ -92,5 +92,5 @@ body {
 }
 
 .caption-text {
-  @apply text-white/50 text-sm leading-[21px] text-center italic
+  @apply text-white/50 text-sm leading-[21px] font-[Inter] text-center italic;
 }
