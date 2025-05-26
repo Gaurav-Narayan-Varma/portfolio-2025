@@ -92,5 +92,5 @@ body {
 }
 
 .caption-text {
-  @apply text-white/50 text-sm leading-[21px] font-[Inter] text-center italic
+  @apply text-white/50 text-sm leading-[21px] text-center italic
 }

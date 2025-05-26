@@ -48,8 +48,8 @@ export default function Clarity() {
 
       <SectionOverview
         title="Meeting Timeline"
-        paragraph1="Before I joined, the product let users record meetings, view transcripts, and access a homepage list of meetings. But many found it frustrating to switch between their calendars and our app. To solve this, I built an in-app calendar that syncs with Google Calendar."
-        paragraph2="Later, we noticed users were frustrated by the redundant side-by-side calendar and list views. To streamline things, we merged them into a unified meeting timeline that combined the best of both."
+        paragraph1="When I joined, users had to constantly switch between their calendars and Clarity to manage meetings. I solved this by building an integrated calendar view, consolidating all meeting management capabilities directly into the platform."
+        paragraph2="Based on user feedback showing redundancy between calendar and list views, I redesigned the experience into a unified timeline that offered the best of both interfaces."
       />
 
       <MediaDisplay
