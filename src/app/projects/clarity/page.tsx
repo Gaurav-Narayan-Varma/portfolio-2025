@@ -1,7 +1,8 @@
 import ClarityIntro from "@/components/projects/clarity/clarity-intro";
+import EmailIntegration from "@/components/projects/clarity/email-integration";
 import MeetingTimeline from "@/components/projects/clarity/meeting-timeline";
-import HorizontalRule from "@/components/projects/horizontal-rule";
 import Onboarding from "@/components/projects/clarity/onboarding";
+import HorizontalRule from "@/components/projects/horizontal-rule";
 
 export default function Clarity() {
   return (
@@ -16,6 +17,9 @@ export default function Clarity() {
 
       <Onboarding />
 
+      <HorizontalRule />
+
+      <EmailIntegration />
     </div>
   );
 }
