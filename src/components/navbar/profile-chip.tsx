@@ -1,8 +1,16 @@
 import Link from "next/link";
 
-export default function UserProfileCard({ setIsOpen }: { setIsOpen?: (isOpen: boolean) => void }) {
+export default function UserProfileCard({
+  setIsOpen,
+}: {
+  setIsOpen?: (isOpen: boolean) => void;
+}) {
   return (
-    <Link href="/" className="cursor-default" onClick={() => setIsOpen?.(false)}>
+    <Link
+      href="/"
+      className="cursor-default"
+      onClick={() => setIsOpen?.(false)}
+    >
       <div className="flex gap-3.5">
         <div className="relative flex items-center justify-center w-10.5 h-10.5 overflow-hidden rounded-[10px]">
           <div className="absolute inset-0 rounded-[10px] border border-white/20" />
