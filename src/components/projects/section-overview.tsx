@@ -4,12 +4,14 @@ export default function SectionOverview({
   subTitle2,
   paragraph1,
   paragraph2,
+  paragraph3,
 }: {
   title: string;
   subTitle1?: string;
   subTitle2?: string;
   paragraph1: string;
   paragraph2?: string;
+  paragraph3?: string;
 }) {
   return (
     <div className="flex gap-2.5">
@@ -26,6 +28,13 @@ export default function SectionOverview({
             <br />
             <br />
             {paragraph2}
+          </>
+        )}
+        {paragraph3 && (
+          <>
+            <br />
+            <br />
+            {paragraph3}
           </>
         )}
       </div>

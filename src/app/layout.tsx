@@ -1,6 +1,7 @@
 import Navbar from "@/components/navbar";
 import type { Metadata } from "next";
 import { Inter, Manrope } from "next/font/google";
+import { Toaster } from "react-hot-toast";
 import "./globals.css";
 
 /**
@@ -27,6 +28,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${manrope.className} antialiased cursor-default`}>
+        <Toaster
+          position="bottom-center"
+          toastOptions={{
+            className: "text-sm text-foreground cursor-default",
+            duration: 3000,
+          }}
+        />
         <div className="flex">
           <Navbar />
           <div className="w-full flex justify-center pl-[260px]">

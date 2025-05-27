@@ -200,6 +200,13 @@ export const toolCategories: ToolCategory[] = [
         link: "https://stripe.com/",
       },
       {
+        name: "Resend",
+        tag: "Email service",
+        image: "/logos/resend-logo.png",
+        link: "https://resend.com/",
+        bgWhite: true,
+      },
+      {
         name: "Amazon S3",
         tag: "Cloud object storage",
         image: "/logos/s3-logo.png",

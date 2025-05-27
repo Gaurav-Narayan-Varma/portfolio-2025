@@ -10,11 +10,17 @@ export default function MediaDisplay({
   return (
     <div className="flex flex-col gap-2.5">
       {video ? (
-        <video src={src} className="rounded-xl w-4/5 mx-auto" autoPlay muted loop />
+        <video
+          src={src}
+          className="rounded-xl w-4/5 mx-auto"
+          autoPlay
+          muted
+          loop
+        />
       ) : (
         <img src={src} alt={caption} className="rounded-xl" />
       )}
-      <div className="caption-text text-center">{caption}</div>
+      {caption && <div className="caption-text text-center">{caption}</div>}
     </div>
   );
 }

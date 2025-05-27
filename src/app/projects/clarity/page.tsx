@@ -2,6 +2,8 @@ import ClarityIntro from "@/components/projects/clarity/clarity-intro";
 import EmailIntegration from "@/components/projects/clarity/email-integration";
 import MeetingTimeline from "@/components/projects/clarity/meeting-timeline";
 import Onboarding from "@/components/projects/clarity/onboarding";
+import Takeaways from "@/components/projects/clarity/takeaways";
+import TemplateManager from "@/components/projects/clarity/template-manager";
 import HorizontalRule from "@/components/projects/horizontal-rule";
 
 export default function Clarity() {
@@ -20,6 +22,14 @@ export default function Clarity() {
       <HorizontalRule />
 
       <EmailIntegration />
+
+      <HorizontalRule />
+
+      <TemplateManager />
+
+      <HorizontalRule />
+
+      <Takeaways />
     </div>
   );
 }

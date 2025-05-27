@@ -1,17 +1,16 @@
 "use client";
-import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { AlertCircle } from "lucide-react";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
+import { Info } from "lucide-react";
 import { useState } from "react";
-import { z } from "zod";
-
-const contactFormSchema = z.object({
-  name: z.string().min(1, { message: "Name is required" }),
-  email: z.string().email({ message: "Invalid email address" }),
-  message: z.string().min(1, { message: "Message is required" }),
-});
+import { toast } from "react-hot-toast";
 
 const contactInfoItems = [
   {
@@ -29,35 +28,30 @@ const contactInfoItems = [
 ];
 
 export default function Contact() {
-  const [formData, setFormData] = useState<z.infer<typeof contactFormSchema>>({
+  const [formData, setFormData] = useState({
     name: "",
     email: "",
     message: "",
   });
-  const [error, setError] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(false);
 
-  function submitContactForm(e: React.MouseEvent<HTMLButtonElement>) {
-    // e.preventDefault();
-    setError(null);
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+
     setIsLoading(true);
-
-    const result = contactFormSchema.safeParse({
-      name: formData.name,
-      email: formData.email,
-      message: formData.message,
-    });
-
-    if (!result.success) {
-      setError(result.error.issues[0].message);
-
-      return;
-    }
 
     fetch("/api/send", {
       method: "POST",
       body: JSON.stringify(formData),
     });
+
+    setFormData({
+      name: "",
+      email: "",
+      message: "",
+    });
+
+    toast.success("Message sent successfully!");
 
     setIsLoading(false);
   }
@@ -68,45 +62,51 @@ export default function Contact() {
         {/* Header */}
         <div className="flex flex-col gap-3">
           <div className="page-title">Get in touch</div>
-          <div className="page-subtitle">Let's connect, just reach out!</div>
+          <div className="flex gap-1 items-center">
+            <div className="page-subtitle">Let's connect, just reach out!</div>
+            <TooltipProvider>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <Info className="h-3 w-3 page-subtitle stroke-[1.5]" />
+                </TooltipTrigger>
+                <TooltipContent className="bg-white text-black font-medium">
+                  Built with Resend
+                </TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
+          </div>
         </div>
         {/* Contact Form */}
-        <form className="flex flex-col gap-4 w-full">
-          {error && (
-            <Alert className="mb-6 border-red-500 border-[0.5px]">
-              <AlertCircle className="h-4 w-4 stroke-red-600 stroke-1" />
-              <AlertDescription className="text-red-600 font-light">
-                {error}
-              </AlertDescription>
-            </Alert>
-          )}
-          <div className="flex gap-3">
-            <Input
-              type="text"
-              placeholder="Name"
-              required
-              className="w-full bg-[#242424] border-0 h-11"
-              value={formData?.name}
-              onChange={(e) =>
-                setFormData({ ...formData, name: e.target.value })
-              }
-            />
-            <Input
-              type="text"
-              placeholder="Email"
-              required
-              className="w-full bg-[#242424] border-0 h-11"
-              value={formData?.email}
-              onChange={(e) =>
-                setFormData({ ...formData, email: e.target.value })
-              }
-            />
+        <form onSubmit={handleSubmit} className="flex flex-col gap-4 w-full">
+          <div className="flex flex-col">
+            <div className="flex gap-3">
+              <Input
+                type="text"
+                placeholder="Name"
+                required
+                className="w-full bg-[#242424] border-0 h-11 focus-visible:ring-0"
+                value={formData?.name}
+                onChange={(e) =>
+                  setFormData({ ...formData, name: e.target.value })
+                }
+              />
+              <Input
+                type="text"
+                placeholder="Email"
+                required
+                className="w-full bg-[#242424] border-0 h-11 focus-visible:ring-0"
+                value={formData?.email}
+                onChange={(e) =>
+                  setFormData({ ...formData, email: e.target.value })
+                }
+              />
+            </div>
           </div>
           <div className="flex gap-3">
             <Textarea
               placeholder="Message"
               required
-              className="w-full bg-[#242424] border-0 h-40"
+              className="w-full bg-[#242424] border-0 h-40 focus-visible:ring-0"
               value={formData?.message}
               onChange={(e) =>
                 setFormData({ ...formData, message: e.target.value })
@@ -116,12 +116,10 @@ export default function Contact() {
           <Button
             type="submit"
             variant="default"
-            className="w-full bg-[#e0e0e0] text-black font-semibold text-sm h-11 hover:bg-[#b7b7b7]"
-            onClick={(e) => submitContactForm(e)}
-            disabled={isLoading}
-          >
-            {isLoading ? "Sending..." : "Send Message"}
-          </Button>
+            className="w-full bg-[#e0e0e0] text-black font-semibold transition-all duration-150 text-sm h-11 active:opacity-50"
+            label={"Send Message"}
+            isLoading={isLoading}
+          />
         </form>
         {/* Footer */}
         <div className="flex flex-col gap-6 w-full">
@@ -160,7 +158,7 @@ function ContactInfoItem({
       <a
         href={contactInfoItem.href}
         target="_blank"
-        className="text-white/60 cursor-default hover:text-white hover:underline"
+        className="text-white/60 cursor-pointer hover:text-white hover:underline decoration-transparent hover:decoration-white transition-all duration-500"
       >
         {contactInfoItem.value}
       </a>
