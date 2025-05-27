@@ -1,3 +1,4 @@
+import { ExternalLink } from "lucide-react";
 import ContactMe from "./contact-me";
 
 export default function IntroSection() {
@@ -18,7 +19,18 @@ export default function IntroSection() {
           Yhangry and Fleek.
         </div>
       </div>
-      <ContactMe />
+      <div className="flex justify-between items-end">
+        <ContactMe />
+        <a
+          href="https://github.com/Gaurav-Narayan-Varma/portfolio-2025"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="w-fit text-white/60 text-sm font-medium -tracking-[0.14] leading-[24.5px] flex items-center gap-1 hover:text-white transition-all duration-300"
+        >
+          Portfolio codebase
+          <ExternalLink className="w-4 h-4" />
+        </a>
+      </div>
     </div>
   );
 }
