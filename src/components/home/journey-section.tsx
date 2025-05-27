@@ -58,7 +58,7 @@ const milestones: Milestone[] = [
 
 export default function JourneySection() {
   return (
-    <div className="flex flex-col gap-12 p-12">
+    <div className="flex flex-col gap-12 py-12 px-5 md:px-10 lg:px-12">
       <div className="flex flex-col gap-8">
         <div className="text-white/60 font-medium text-base -tracking-[0.16] leading-7">
           Who I am
@@ -111,8 +111,8 @@ export default function JourneySection() {
             Dartmouth College
           </a>
           . That&apos;s where I discovered my passion for understanding human
-          decision-making, and how technology can meaningfully improve people&apos;s
-          lives.
+          decision-making, and how technology can meaningfully improve
+          people&apos;s lives.
         </div>
       </div>
       <div>
@@ -153,11 +153,13 @@ function Milestone({ milestone }: { milestone: Milestone }) {
         <div>{milestone.company}</div>
       </div>
       <div className="border-b border-dashed border-white/[.12] flex-grow self-center" />
-      <div className="text-white/70 text-[15px] leading-[26.25px] -tracking-[0.15px] font-medium">
-        {milestone.role}
-      </div>
-      <div className="text-white/40 text-[15px] leading-[26.25px] -tracking-[0.15px] font-medium">
-        {milestone.duration}
+      <div className="flex flex-col gap-1 items-end md:flex-row md:gap-4">
+        <div className="text-white/70 text-[15px] leading-[26.25px] -tracking-[0.15px] font-medium max-[400px]:w-32 truncate text-end">
+          {milestone.role}
+        </div>
+        <div className="text-white/40 text-[15px] leading-[26.25px] -tracking-[0.15px] font-medium">
+          {milestone.duration}
+        </div>
       </div>
     </div>
   );

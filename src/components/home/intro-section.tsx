@@ -2,7 +2,7 @@ import ContactMe from "./contact-me";
 
 export default function IntroSection() {
   return (
-    <div className="flex flex-col pt-18 px-12 pb-12 gap-8">
+    <div className="flex flex-col pt-16 lg:pt-18 px-5 md:px-10 lg:px-12 pb-12 gap-8">
       <div className="flex flex-col gap-5">
         <div className="font-[Inter] text-4xl font-medium flex flex-col gap-1 -tracking-[0.72px] leading-[45px]">
           <div>Hey, I&apos;m Gaurav.</div>

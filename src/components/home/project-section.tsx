@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function ProjectSection() {
   return (
-    <div className="flex flex-col p-12 gap-8">
+    <div className="flex flex-col py-12 px-5 md:px-10 lg:px-12 gap-8">
       <div className="flex justify-between">
         <div className="description-text">Featured work</div>
         <Link

@@ -57,8 +57,8 @@ export default function Contact() {
   }
 
   return (
-    <div className="animate-fade-in h-screen flex flex-col justify-center w-full items-center">
-      <div className="px-12 py-18 flex flex-col gap-12 w-full max-w-[800px] items-start">
+    <div className="animate-fade-in h-screen flex flex-col justify-start w-full items-center">
+      <div className="px-5 md:px-10 lg:px-12 pb-18 pt-[58px] lg:pt-44 flex flex-col gap-12 w-full max-w-[800px] items-start">
         {/* Header */}
         <div className="flex flex-col gap-3">
           <div className="page-title">Get in touch</div>
@@ -79,7 +79,7 @@ export default function Contact() {
         {/* Contact Form */}
         <form onSubmit={handleSubmit} className="flex flex-col gap-4 w-full">
           <div className="flex flex-col">
-            <div className="flex gap-3">
+            <div className="flex flex-col md:flex-row gap-3">
               <Input
                 type="text"
                 placeholder="Name"
@@ -158,7 +158,7 @@ function ContactInfoItem({
       <a
         href={contactInfoItem.href}
         target="_blank"
-        className="text-white/60 cursor-pointer hover:text-white hover:underline decoration-transparent hover:decoration-white transition-all duration-500"
+        className="text-white/60 cursor-pointer hover:text-white hover:underline decoration-transparent hover:decoration-white transition-all duration-500 truncate"
       >
         {contactInfoItem.value}
       </a>
