@@ -18,13 +18,15 @@ export default function SectionOverview({
   link?: string;
 }) {
   return (
-    <div className="flex gap-2.5">
-      <div className="flex flex-col gap-3 w-1/2 justify-between">
-        <div>
+    <div className="flex flex-col gap-6 md:flex-row md:gap-2.5">
+      <div className="flex items-end md:items-start md:flex-col gap-3 md:w-1/2 justify-between">
+        <div className="flex flex-col gap-3">
           <div className="page-title">{title}</div>
-          <div className="text-white/60 text-sm font-medium -tracking-[0.14] leading-[24.5px]">
-            {subTitle1} <br /> {subTitle2}
-          </div>
+          {subTitle1 && (
+            <div className="text-white/60 text-sm font-medium -tracking-[0.14] leading-[24.5px]">
+              {subTitle1} <br /> {subTitle2}
+            </div>
+          )}
         </div>
         {link && (
           <a
@@ -33,13 +35,12 @@ export default function SectionOverview({
             rel="noopener noreferrer"
             className="w-fit text-white/60 text-sm font-medium -tracking-[0.14] leading-[24.5px] flex items-center gap-1 hover:text-white transition-all duration-300"
           >
-            View Codebase
-
+            View codebase
             <ExternalLink className="w-4 h-4" />
           </a>
         )}
       </div>
-      <div className="w-1/2 description-text">
+      <div className="md:w-1/2 description-text">
         {paragraph1}
         {paragraph2 && (
           <>

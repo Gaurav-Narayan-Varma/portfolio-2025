@@ -6,7 +6,7 @@ import YhangryImpact from "@/components/projects/yhangry/yhangry-impact";
 
 export default function Yhangry() {
   return (
-    <div className="flex flex-col gap-16 w-full max-w-[1200px] px-12 py-18 animate-fade-in h-fit">
+    <div className="flex flex-col gap-16 w-full max-w-[1200px] px-5 md:px-10 lg:px-12 pt-[58px] lg:pt-18 pb-18 animate-fade-in h-fit">
       <YhangryIntro />
 
       <HorizontalRule />

@@ -108,20 +108,13 @@ const feastFullStack = [
 
 const feastInfrastructureStack = [
   {
-    title: "Docker",
-    icon: <img src="/logos/docker-logo-sm.png" alt="Docker" />,
-    href: "",
-    description:
-      "With Feast, I'm building an app that needs to scale, which means scaling the engineering team as well. Docker enables this by letting teammates easily deploy a Postgres database locally, eliminating the classic 'it works on my machine' problem.",
-  },
-  {
     title: "Render",
     icon: <img src="/logos/render-logo.jpg" alt="Render" />,
     href: "",
     description:
       "We chose Render as our deployment platform because it aligns with Feast's need for rapid development and deployment.",
     description2:
-      "Unlike traditional cloud platforms such as AWS EC2, which require significant infrastructure expertise, Render offers a streamlined deployment experience that allows our team to focus on product development rather than infrastructure management. This approach enables us to maintain development velocity without sacrificing reliability.",
+      "Unlike traditional cloud platforms such as AWS EC2, which require significant infrastructure expertise, Render offers a streamlined deployment experience that allows our team to focus on product development rather than infrastructure management.",
   },
   {
     title: "Stripe",
@@ -133,13 +126,6 @@ const feastInfrastructureStack = [
       "The integration is straightforward: once a chef creates their Stripe Connect account, we can automatically route customer payments to their designated account using their unique Account ID",
   },
   {
-    title: "Amazon S3",
-    icon: <img src="/logos/s3-logo-sm.png" alt="AWS" />,
-    href: "",
-    description:
-      "In the culinary industry, where presentation is paramount, Amazon S3 provides robust image storage solutions. This enabled Feast to securely host chef profiles and their culinary creations.",
-  },
-  {
     title: "Resend",
     icon: <img src="/logos/resend-logo.png" alt="Resend" />,
     href: "",
@@ -148,45 +134,56 @@ const feastInfrastructureStack = [
     description2:
       "The platform facilitates a seamless chain of notifications: alerting chefs to new booking requests, confirming acceptances to users, and notifying chefs of completed payments.",
   },
+  {
+    title: "Docker",
+    icon: <img src="/logos/docker-logo-sm.png" alt="Docker" />,
+    href: "",
+    description:
+      "With Feast, I'm building an app that needs to scale, which means scaling the engineering team as well.",
+    description2:
+      "Docker enables this by letting teammates easily deploy a Postgres database locally, eliminating the classic 'it works on my machine' problem.",
+  },
+  {
+    title: "Amazon S3",
+    icon: <img src="/logos/s3-logo-sm.png" alt="AWS" />,
+    href: "",
+    description:
+      "In the culinary industry, where presentation is paramount, Amazon S3 provides robust image storage solutions. This enabled Feast to securely host chef profiles and their culinary creations.",
+  },
 ];
 
 export default function FeastTechStack() {
-  const [selected, setSelected] = useState<Record<string, React.ReactNode>>({
-    title: "Next.js",
-    icon: <img src="/logos/nextjs-logo.png" alt="Next.js" />,
-    href: "",
-    description:
-      "Next.js provides essential server-side rendering capabilities that power Feast's SEO strategy, ensuring our chef profiles and menus are highly discoverable through search engines.",
-    description2:
-      "Beyond SEO, Next.js brings significant UX improvements through fast page loads and its intuitive file-system based routing system.",
-  });
+  const [selected, setSelected] = useState<Record<string, React.ReactNode>>(
+    feastFrontendStack[0]
+  );
 
   return (
-    <div className="w-full flex gap-14 xl:gap-18">
+    <div className="w-full flex flex-col md:flex-row gap-2 md:gap-14 xl:gap-18">
       <div className="flex flex-col gap-5 h-full">
         <div className="page-title whitespace-nowrap">Tech Stack</div>
 
+        {/* Floating Docks */}
         <div className="ml-6.5 flex flex-col gap-6 h-full justify-between">
           <div className="w-fit flex relative">
-            <div className="text-white/50 text-xs font-[Inter] -rotate-90 absolute top-6 -left-8">
+            <div className="text-white/50 text-xs font-[Inter] -rotate-90 absolute top-3 md:top-6 -left-8">
               Front
             </div>
             <FloatingDock items={feastFrontendStack} onSelect={setSelected} />
           </div>
           <div className="w-fit flex relative">
-            <div className="text-white/50 text-xs font-[Inter] -rotate-90 absolute top-6 -left-8">
+            <div className="text-white/50 text-xs font-[Inter] -rotate-90 absolute top-3 md:top-6 -left-8">
               Back
             </div>
             <FloatingDock items={feastBackendStack} onSelect={setSelected} />
           </div>
           <div className="w-fit flex relative">
-            <div className="text-white/50 text-xs font-[Inter] -rotate-90 absolute top-6 -left-7">
+            <div className="text-white/50 text-xs font-[Inter] -rotate-90 absolute top-3 md:top-6 -left-7">
               Full
             </div>
             <FloatingDock items={feastFullStack} onSelect={setSelected} />
           </div>
           <div className="w-fit flex relative">
-            <div className="text-white/50 text-xs font-[Inter] -rotate-90 absolute top-6 -left-8">
+            <div className="text-white/50 text-xs font-[Inter] -rotate-90 absolute top-3 md:top-6 -left-8">
               Infra
             </div>
             <FloatingDock
@@ -196,7 +193,12 @@ export default function FeastTechStack() {
           </div>
         </div>
       </div>
-      <div className="flex flex-col gap-2 flex-1 justify-center">
+
+      {/* Selected Tech Stack */}
+      <div
+        className="flex flex-col gap-2 flex-1 justify-center animate-fade-in"
+        key={selected.title?.toString()}
+      >
         <div className="flex items-center justify-center rounded-full overflow-hidden w-full">
           <div className="w-28 overflow-hidden rounded-full">
             {selected.icon}

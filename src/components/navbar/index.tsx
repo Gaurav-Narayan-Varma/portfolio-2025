@@ -4,7 +4,7 @@ import { usePathname } from "next/navigation";
 import NavItem from "./nav-item";
 import UserProfileCard from "./profile-chip";
 
-const mainNavItems = [
+export const mainNavItems = [
   {
     href: "/",
     icon: "/home.svg",
@@ -22,7 +22,7 @@ const mainNavItems = [
   },
 ];
 
-const connectNavItems = [
+export const connectNavItems = [
   {
     href: "/contact",
     icon: "/contact.svg",
@@ -44,7 +44,7 @@ export default function Sidebar() {
   const pathname = usePathname();
 
   return (
-    <div className="top-0 flex flex-col h-screen fixed justify-between min-w-[260px] border-r border-ds-gray-300 pt-6 pb-5 px-4.5">
+    <div className="hidden lg:flex top-0 flex-col h-screen fixed justify-between min-w-[260px] border-r border-ds-gray-300 pt-6 pb-5 px-4.5">
       <div className="flex flex-col gap-8">
         <div className="flex flex-col gap-9">
           <UserProfileCard />

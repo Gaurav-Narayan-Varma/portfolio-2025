@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Inter, Manrope } from "next/font/google";
 import { Toaster } from "react-hot-toast";
 import "./globals.css";
+import NavbarMobile from "@/components/navbar-mobile";
 
 /**
  * Call Manrope and Inter here to self host fonts, must be assigned to a variable
@@ -37,7 +38,8 @@ export default function RootLayout({
         />
         <div className="flex">
           <Navbar />
-          <div className="w-full flex justify-center pl-[260px]">
+          <NavbarMobile />
+          <div className="w-full flex justify-center pt-[71.05px] lg:pt-0 lg:pl-[260px]">
             {children}
           </div>
         </div>

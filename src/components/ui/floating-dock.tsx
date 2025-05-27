@@ -8,7 +8,7 @@ import {
   useSpring,
   useTransform,
 } from "motion/react";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export const FloatingDock = ({
   items,
@@ -34,7 +34,11 @@ export const FloatingDock = ({
         className={desktopClassName}
         onSelect={onSelect}
       />
-      <FloatingDockMobile items={items} className={mobileClassName} />
+      <FloatingDockMobile
+        items={items}
+        className={mobileClassName}
+        onSelect={onSelect}
+      />
     </>
   );
 };
@@ -42,18 +46,41 @@ export const FloatingDock = ({
 const FloatingDockMobile = ({
   items,
   className,
+  onSelect,
 }: {
-  items: { title: string; icon: React.ReactNode; href: string }[];
+  items: {
+    title: string;
+    icon: React.ReactNode;
+    href: string;
+    description: string;
+    description2?: string;
+  }[];
   className?: string;
+  onSelect: (item: Record<string, React.ReactNode>) => void;
 }) => {
   const [open, setOpen] = useState(false);
+  const dockRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dockRef.current && !dockRef.current.contains(event.target as Node)) {
+        setOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
   return (
-    <div className={cn("relative block md:hidden", className)}>
+    <div ref={dockRef} className={cn("relative block md:hidden", className)}>
       <AnimatePresence>
         {open && (
           <motion.div
             layoutId="nav"
-            className="absolute inset-x-0 bottom-full mb-2 flex flex-col gap-2"
+            className="absolute inset-y-0 left-10 bottom-full mb-2 flex gap-2"
           >
             {items.map((item, idx) => (
               <motion.div
@@ -71,14 +98,22 @@ const FloatingDockMobile = ({
                   },
                 }}
                 transition={{ delay: (items.length - 1 - idx) * 0.05 }}
+                onClick={() => {
+                  onSelect({
+                    title: item.title,
+                    icon: item.icon,
+                    description: item.description,
+                    description2: item.description2,
+                  });
+                  setOpen(false);
+                }}
               >
-                <a
-                  href={item.href}
+                <div
                   key={item.title}
                   className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-50 dark:bg-neutral-900"
                 >
                   <div className="h-4 w-4">{item.icon}</div>
-                </a>
+                </div>
               </motion.div>
             ))}
           </motion.div>
@@ -88,7 +123,7 @@ const FloatingDockMobile = ({
         onClick={() => setOpen(!open)}
         className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-50 dark:bg-neutral-800"
       >
-        <IconLayoutNavbarCollapse className="h-5 w-5 text-neutral-500 dark:text-neutral-400" />
+        <IconLayoutNavbarCollapse className="h-5 w-5 text-neutral-500 dark:text-neutral-400 rotate-90" />
       </button>
     </div>
   );

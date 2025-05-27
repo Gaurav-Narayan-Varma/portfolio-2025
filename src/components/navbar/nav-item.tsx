@@ -1,4 +1,4 @@
-import clsx from "clsx";
+import cx from "clsx";
 import Link from "next/link";
 
 export default function NavItem({
@@ -7,26 +7,48 @@ export default function NavItem({
   label,
   isActive,
   isExternalLink,
+  onClick,
+  isMobile,
 }: {
   href: string;
   icon: string;
   label: string;
   isActive: boolean;
   isExternalLink?: boolean;
+  onClick?: () => void;
+  isMobile?: boolean;
 }) {
   return (
     <Link
       href={href}
       target={isExternalLink ? "_blank" : undefined}
-      className={clsx(
+      className={cx(
         "flex gap-2 p-2 cursor-default rounded-md  border border-transparent h-10 group",
         isActive
           ? "bg-ds-gray-200 border !border-ds-gray-400 opacity-90 transition-all duration-150"
-          : "opacity-60 hover:bg-ds-gray-100 hover:opacity-90"
+          : !isMobile && "opacity-60 hover:bg-ds-gray-100 hover:opacity-90",
+        {
+          "hover:bg-ds-gray-100 active:bg-ds-gray-200": isMobile,
+        }
       )}
+      onClick={onClick}
     >
-      <img src={`/icons/${icon}`} alt={label} width={16} height={16} />
-      <div className="font-medium -tracking-[0.14px] leading-[21px] text-sm text-white">
+      <img
+        src={`/icons/${icon}`}
+        alt={label}
+        width={16}
+        height={16}
+        className={cx({ "opacity-60": isMobile })}
+      />
+      <div
+        className={cx(
+          "font-medium -tracking-[0.14px] leading-[21px] text-sm text-white",
+          {
+            "!text-base": isMobile,
+            "opacity-90": isMobile,
+          }
+        )}
+      >
         {label}
       </div>
       {isExternalLink && (

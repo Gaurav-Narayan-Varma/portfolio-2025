@@ -4,7 +4,7 @@ import cx from "clsx";
 
 export default function Stack() {
   return (
-    <div className="animate-fade-in px-12 py-18 flex flex-col gap-12 w-full max-w-[1000px]">
+    <div className="animate-fade-in px-5 md:px-10 lg:px-12 pt-[58px] lg:pt-18 pb-18 flex flex-col gap-12 w-full max-w-[1000px] xl:max-w-[1600px]">
       <div className="flex flex-col gap-3">
         <div className="page-title">My toolbox</div>
         <div className="h-[56.6016px] flex flex-col justify-start">
@@ -19,7 +19,7 @@ export default function Stack() {
           <div className="text-white/60 font-medium text-base -tracking-[.16] leading-7 mb-7">
             {toolCategory.name}
           </div>
-          <div className="grid grid-cols-2 gap-3.5">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-3.5">
             {toolCategory.tools.map((tool) => (
               <Tool key={tool.name} tool={tool} />
             ))}
@@ -40,20 +40,23 @@ function Tool({ tool }: { tool: Tool }) {
       <img
         src={tool.image}
         alt={tool.name}
-        className={cx("w-10 h-10 rounded-[10px]", tool.bgWhite && "bg-white")}
+        className={cx(
+          "w-10 h-10 rounded-[10px] flex-shrink-0",
+          tool.bgWhite && "bg-white"
+        )}
       />
-      <div key={tool.name} className="flex flex-col gap-1 w-full">
+      <div key={tool.name} className="flex flex-col gap-1 min-w-0 flex-1">
         <div className="text-white/90 text-[15px] font-medium -tracking-[.15] leading-[22.5px]">
           {tool.name}
         </div>
-        <div className="text-white/50 text-sm font-medium -tracking-[.14] leading-[21px]">
+        <div className="text-white/50 text-sm font-medium -tracking-[.14] leading-[21px] truncate">
           {tool.tag}
         </div>
       </div>
       <img
         src="/icons/external.svg"
         alt="External Link"
-        className="w-5 h-5 opacity-50 group-hover:opacity-100 transition-all duration-300 group-hover:rotate-45"
+        className="w-5 h-5 opacity-50 group-hover:opacity-100 transition-all duration-300 group-hover:rotate-45 flex-shrink-0"
       />
     </a>
   );
