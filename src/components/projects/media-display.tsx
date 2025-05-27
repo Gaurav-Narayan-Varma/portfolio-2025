@@ -12,10 +12,12 @@ export default function MediaDisplay({
       {video ? (
         <video
           src={src}
-          className="rounded-xl w-4/5 mx-auto"
+          className="rounded-xl mx-auto"
           autoPlay
           muted
           loop
+          controls={false}
+          playsInline
         />
       ) : (
         <img src={src} alt={caption} className="rounded-xl" />
