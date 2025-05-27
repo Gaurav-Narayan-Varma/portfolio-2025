@@ -225,12 +225,6 @@ export const toolCategories: ToolCategory[] = [
         link: "https://vercel.com/",
       },
       {
-        name: "Beekeeper Studio",
-        tag: "Modern database manager",
-        image: "/logos/beekeeper-logo.svg",
-        link: "https://www.beekeeperstudio.io/",
-      },
-      {
         name: "GitHub Actions",
         tag: "CI/CD pipelines",
         image: "/logos/github-actions-logo.png",
@@ -293,6 +287,12 @@ export const toolCategories: ToolCategory[] = [
         tag: "Team communication",
         image: "/logos/slack-logo.png",
         link: "https://slack.com/",
+      },
+      {
+        name: "Beekeeper Studio",
+        tag: "Modern database manager",
+        image: "/logos/beekeeper-logo.svg",
+        link: "https://www.beekeeperstudio.io/",
       },
       {
         name: "Github",
