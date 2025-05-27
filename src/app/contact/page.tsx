@@ -57,8 +57,8 @@ export default function Contact() {
   }
 
   return (
-    <div className="animate-fade-in h-screen flex flex-col justify-start w-full items-center">
-      <div className="px-5 md:px-10 lg:px-12 pb-18 pt-[58px] lg:pt-44 flex flex-col gap-12 w-full max-w-[800px] items-start">
+    <div className="animate-fade-in flex flex-col justify-start w-full items-center">
+      <div className="px-5 md:px-10 lg:px-12 pb-18 pt-[58px] lg:pt-40 flex flex-col gap-12 w-full max-w-[800px] items-start">
         {/* Header */}
         <div className="flex flex-col gap-3">
           <div className="page-title">Get in touch</div>

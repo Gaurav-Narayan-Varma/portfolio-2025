@@ -16,7 +16,7 @@ export default function NavbarMobile() {
       })}
     >
       <div className="flex justify-between items-center">
-        <UserProfileCard />
+        <UserProfileCard setIsOpen={setIsOpen} />
         <MenuIcon onClick={() => setIsOpen(!isOpen)} />
       </div>
 
