@@ -63,7 +63,7 @@ export default function Contact() {
         <div className="flex flex-col gap-3">
           <div className="page-title">Get in touch</div>
           <div className="flex gap-1 items-center">
-            <div className="page-subtitle">Let's connect, just reach out!</div>
+            <div className="page-subtitle">Let&apos;s connect, just reach out!</div>
             <TooltipProvider>
               <Tooltip>
                 <TooltipTrigger asChild>

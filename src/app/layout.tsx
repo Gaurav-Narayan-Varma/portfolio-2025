@@ -1,9 +1,9 @@
 import Navbar from "@/components/navbar";
+import NavbarMobile from "@/components/navbar-mobile";
 import type { Metadata } from "next";
 import { Inter, Manrope } from "next/font/google";
 import { Toaster } from "react-hot-toast";
 import "./globals.css";
-import NavbarMobile from "@/components/navbar-mobile";
 
 /**
  * Call Manrope and Inter here to self host fonts, must be assigned to a variable
@@ -15,6 +15,8 @@ const manrope = Manrope({
 const inter = Inter({
   subsets: ["latin"],
 });
+
+console.log("Printing inter to pass ci cd", inter);
 
 export const metadata: Metadata = {
   title: "Gaurav Varma",
