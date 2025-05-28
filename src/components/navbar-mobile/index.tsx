@@ -3,7 +3,7 @@ import { connectNavItems, mainNavItems } from "@/components/navbar";
 import NavItem from "@/components/navbar/nav-item";
 import UserProfileCard from "@/components/navbar/profile-chip";
 import cx from "clsx";
-import { MenuIcon } from "lucide-react";
+import { MenuIcon, X } from "lucide-react";
 import { useState } from "react";
 
 export default function NavbarMobile() {
@@ -17,7 +17,11 @@ export default function NavbarMobile() {
     >
       <div className="flex justify-between items-center">
         <UserProfileCard setIsOpen={setIsOpen} />
-        <MenuIcon onClick={() => setIsOpen(!isOpen)} />
+        {isOpen ? (
+          <X onClick={() => setIsOpen(false)} />
+        ) : (
+          <MenuIcon onClick={() => setIsOpen(true)} />
+        )}
       </div>
 
       <div
