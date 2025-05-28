@@ -127,7 +127,7 @@ export default function JourneySection() {
 function Milestone({ milestone }: { milestone: Milestone }) {
   return (
     <div className="flex py-3 gap-4">
-      <div className="flex gap-2.5">
+      <div className="flex gap-2.5 items-center">
         {milestone.type === "multiple" ? (
           <div className="flex -space-x-2.5">
             {milestone.image.map((img, i) => (
