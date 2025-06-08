@@ -1,0 +1,33 @@
+{
+  "name": "@portfolio-2025/api",
+  "version": "0.0.0",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "type": "module",
+  "author": "",
+  "license": "ISC",
+  "description": "Portfolio API",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "predev": "docker compose up -d",
+    "dev": "concurrently \"nodemon --exec 'tsc -b && tsc-alias' --watch src --ext ts\" \"nodemon --exec 'tsx src/server.ts' --watch src --ext ts\""
+  },
+  "dependencies": {
+    "@pinecone-database/pinecone": "^6.1.0",
+    "@prisma/client": "^6.9.0",
+    "@trpc/server": "^11.3.1",
+    "cookie": "^1.0.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "prisma": "^6.9.0",
+    "tsc-alias": "^1.8.16"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.3",
+    "concurrently": "^9.1.2",
+    "nodemon": "^3.1.10",
+    "tsx": "^4.19.4"
+  }
+}
