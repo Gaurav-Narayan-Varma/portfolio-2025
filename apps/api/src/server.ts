@@ -3,7 +3,6 @@ import "dotenv/config";
 import cors from "cors";
 import express from "express";
 import { createServer } from "http";
-import { db } from "./db.js";
 import { trpcExpressRouter } from "./routes/trpc/trpcRouter.js";
 import { openai } from "./utils/llm.js";
 import { index } from "./utils/pinecone.js";
@@ -104,14 +103,6 @@ async function main() {
   });
 
   app.use("/trpc", trpcExpressRouter);
-
-  app.on("close", async () => {
-    await db.$disconnect().catch(async (e) => {
-      console.error(e);
-      await db.$disconnect();
-      process.exit(1);
-    });
-  });
 
   httpServer.listen(port);
 
