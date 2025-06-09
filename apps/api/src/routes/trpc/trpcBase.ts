@@ -1,13 +1,8 @@
 import { initTRPC } from "@trpc/server";
-import { SerializeOptions, parse, serialize } from "cookie";
+import { parse, serialize } from "cookie";
 import type { IncomingMessage, ServerResponse } from "http";
 import { Context } from "vm";
 import { ZodError } from "zod";
-
-// function logoutUser(ctx: any) {
-//   ctx.deleteCookie(Cookie.SessionId);
-//   ctx.deleteCookie(Cookie.LastLoggedInAs);
-// }
 
 const MAX_COOKIE_AGE = 60 * 60 * 24 * 365;
 
@@ -59,13 +54,6 @@ export const t = initTRPC.context<Context>().create({
     };
   },
 });
-
-type SetCookieOptions = SerializeOptions & {
-  /**
-   * Sets the Max-Age value to 1 year
-   */
-  persistent?: boolean;
-};
 
 export const trpcRouter = t.router;
 
@@ -125,25 +113,6 @@ export const publicProcedure = t.procedure
       return cookies[name];
     };
 
-    const setCookie = (
-      name: Cookie,
-      value: string,
-      options?: SetCookieOptions
-    ) => {
-      const { persistent, ...defaultOptions } = options ?? {};
-
-      res.appendHeader(
-        "Set-Cookie",
-        serialize(name, value, {
-          secure: process.env.NODE_ENV === "production",
-          domain: process.env.API_COOKIE_DOMAIN,
-          path: "/",
-          ...(persistent ? { maxAge: MAX_COOKIE_AGE } : {}),
-          ...defaultOptions,
-        })
-      );
-    };
-
     const deleteCookie = (name: Cookie) => {
       res.appendHeader(
         "Set-Cookie",
@@ -161,49 +130,7 @@ export const publicProcedure = t.procedure
         getCookieHeader,
         getCookies,
         getCookie,
-        setCookie,
         deleteCookie,
       },
     });
   });
-
-// export const userProcedure = publicProcedure.use(async (opts) => {
-//   const { ctx } = opts;
-
-//   /**
-//    * Next.js will sometimes wrap the headers in a Headers object,
-//    * so we need to check for that and access the cookie header accordingly.
-//    */
-//   const cookieHeader = ctx.getCookieHeader();
-
-//   if (!cookieHeader) {
-//     throw new TRPCError({ code: "UNAUTHORIZED" });
-//   }
-
-//   const parsedCookie = parse(cookieHeader) as Record<
-//     string,
-//     string | undefined
-//   >;
-//   const sessionId = parsedCookie[Cookie.SessionId];
-
-//   if (!sessionId) {
-//     throw new TRPCError({ code: "UNAUTHORIZED" });
-//   }
-
-//   const session = await db.session.findUnique({
-//     where: {
-//       id: sessionId,
-//     },
-//   });
-
-//   if (!session) {
-//     logoutUser(ctx);
-//     throw new TRPCError({ code: "UNAUTHORIZED" });
-//   }
-
-//   return opts.next({
-//     ctx: {
-//       userId: session.userId,
-//     },
-//   });
-// });
