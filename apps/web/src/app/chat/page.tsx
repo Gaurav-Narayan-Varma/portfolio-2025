@@ -109,7 +109,7 @@ export default function ChatPage() {
 function Thread() {
   return (
     <ThreadPrimitive.Root
-      className="bg-background box-border flex h-[calc(100vh-71.05px)] lg:h-screen flex-col overflow-hidden w-full animate-fade-in"
+      className="bg-background box-border flex h-[calc(100dvh-71.05px)] lg:h-screen flex-col overflow-hidden w-full animate-fade-in"
       style={{
         ["--thread-max-width" as string]: "42rem",
       }}
