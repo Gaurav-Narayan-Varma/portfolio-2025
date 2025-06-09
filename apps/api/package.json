@@ -10,7 +10,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "concurrently \"nodemon --exec 'tsc -b && tsc-alias' --watch src --ext ts\" \"nodemon --exec 'tsx src/server.ts' --watch src --ext ts\"",
-    "build": "prisma generate && tsc -b && tsc-alias",
+    "build": "tsc -b && tsc-alias",
     "start": "node dist/server.js"
   },
   "dependencies": {
