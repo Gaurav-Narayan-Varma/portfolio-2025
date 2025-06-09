@@ -1,5 +1,5 @@
 import { initTRPC } from "@trpc/server";
-import { parse, serialize } from "cookie";
+import { parse, serialize } from "cookie/index.js";
 import type { IncomingMessage, ServerResponse } from "http";
 import { Context } from "vm";
 import { ZodError } from "zod";
