@@ -127,6 +127,12 @@ const records = [
       "Gaurav decided to do software engineering because he loves building products that people love and also the complexity of the problems that he gets to solve.",
     category: "overview",
   },
+  {
+    _id: "rec22",
+    chunk_text:
+      "Outside of work, Gaurav is passionate about staying active through running, cherishes time with friends and family, has a weakness for pizza, and loves building side projects, with Feast being his current focus.",
+    category: "overview",
+  },
 ];
 
 await index.upsertRecords(records);

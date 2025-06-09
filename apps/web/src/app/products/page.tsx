@@ -6,10 +6,10 @@ export default function Projects() {
     <div className="animate-fade-in px-12 py-18 flex flex-col w-full max-w-[1200px] gap-14">
       <div className="flex flex-col gap-3">
         <div className="page-title">
-          Recent Projects
+          Recent Products
         </div>
         <div className="page-subtitle">
-          Dive into some of my work examples.
+          Dive into some of my products.
         </div>
       </div>
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2">

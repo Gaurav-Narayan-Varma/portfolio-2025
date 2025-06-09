@@ -8,8 +8,8 @@ export default function Home() {
     <div className="w-full flex justify-center animate-fade-in">
       <div className="max-w-[1200px] w-full h-screen ">
         <IntroSection />
-        <ProjectSection />
         <JourneySection />
+        <ProjectSection />
         <ContactSection />
       </div>
     </div>

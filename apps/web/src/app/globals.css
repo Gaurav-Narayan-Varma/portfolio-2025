@@ -5,7 +5,7 @@
     var(--font-manrope), "Manrope Placeholder", system-ui, -apple-system,
     BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   /* Use dark mode as default even for light mode */
-  --background: #141414;
+  --background: #141420;
   --foreground: #ededed;
 }
 
@@ -29,7 +29,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #141414;
+    --background: #141420;
     --foreground: #ededed;
   }
 }

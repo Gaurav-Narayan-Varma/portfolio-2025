@@ -25,10 +25,10 @@ export default function NavItem({
       className={cx(
         "flex gap-2 p-2 cursor-default rounded-md  border border-transparent h-10 group items-center",
         isActive
-          ? "bg-ds-gray-200 border !border-ds-gray-400 opacity-90 transition-all duration-150"
-          : !isMobile && "opacity-60 hover:bg-ds-gray-100 hover:opacity-90",
+          ? "bg-[#1a1a2e] border !border-[#232347] opacity-90 transition-all duration-150"
+          : !isMobile && "opacity-60 hover:bg-[#1a1a2e] hover:opacity-90",
         {
-          "hover:bg-ds-gray-100 active:bg-ds-gray-200": isMobile,
+          "hover:bg-[#1a1a2e] active:bg-[#232347]": isMobile,
         }
       )}
       onClick={onClick}

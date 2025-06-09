@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function ProjectCard({ project }: { project: Project }) {
     return (
-      <Link href={`/projects/${project.slug}`} className="cursor-default flex flex-col rounded-lg border border-ds-gray-900 overflow-hidden group">
+      <Link href={`/products/${project.slug}`} className="cursor-default flex flex-col rounded-lg border border-ds-gray-900 overflow-hidden group">
         <div className="aspect-auto overflow-hidden">
           <div className="transition-transform duration-300 scale-105 group-hover:scale-110 h-full w-full origin-center">
             <img
@@ -13,7 +13,7 @@ export default function ProjectCard({ project }: { project: Project }) {
             />
           </div>
         </div>
-        <div className="px-4 py-4.5 bg-ds-gray-100 group-hover:bg-ds-gray-800 transition-colors duration-150 h-[83.25px] flex items-center gap-4">
+        <div className="px-4 py-4.5 bg-[#1a1a2e] group-hover:bg-[#232347] transition-colors duration-150 h-[83.25px] flex items-center gap-4">
           <img
             src={project.logoImage}
             alt={`${project.name} Logo`}

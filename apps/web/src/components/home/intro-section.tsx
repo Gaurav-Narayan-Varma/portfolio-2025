@@ -1,16 +1,12 @@
 import { ExternalLink } from "lucide-react";
 import Link from "next/link";
-import ContactMe from "./contact-me";
 
 export default function IntroSection() {
   return (
     <div className="flex flex-col pt-16 lg:pt-18 px-5 md:px-10 lg:px-12 pb-12 gap-8">
       <div className="flex flex-col gap-5">
         <div className="font-[Inter] text-4xl font-medium flex flex-col gap-1 -tracking-[0.72px] leading-[45px]">
-          <div>Hey, I&apos;m Gaurav.</div>
-          <div>
-            I build <span className="text-ds-gray-700">software.</span>
-          </div>
+          I&apos;m Gaurav, and I create software that matters.
         </div>
         <div className="description-text">
           I&apos;ve built products from 0 to 1 that have impacted thousands of
@@ -21,7 +17,6 @@ export default function IntroSection() {
         </div>
       </div>
       <div className="flex justify-between items-end">
-        <ContactMe />
         <a
           href="https://github.com/Gaurav-Narayan-Varma/portfolio-2025"
           target="_blank"

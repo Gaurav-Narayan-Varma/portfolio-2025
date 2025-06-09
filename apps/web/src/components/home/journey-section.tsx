@@ -61,13 +61,13 @@ export default function JourneySection() {
     <div className="flex flex-col gap-12 py-12 px-5 md:px-10 lg:px-12">
       <div className="flex flex-col gap-8">
         <div className="text-white/60 font-medium text-base -tracking-[0.16] leading-7">
-          Who I am
+          My Journey
         </div>
         <div className="text-white text-base leading-7 -tracking-[0.16] font-medium">
-          I&apos;m an engineer by trade, but I&apos;m most passionate about
-          building great products, whether that&apos;s listening to users,
-          shipping features, or project planning. Right now, I build as a
-          founding engineer at{" "}
+          While I work as an engineer, my true passion lies in product
+          development - from understanding user needs and delivering impactful
+          features to strategic planning. Currently, I serve as a founding
+          engineer at{" "}
           <a
             href="https://www.adoptclarity.com/"
             className="hyperlink"
@@ -101,8 +101,7 @@ export default function JourneySection() {
           </a>{" "}
           on integrating AI into their business.
           <br />
-          <br />
-          Once upon a time, I studied Economics at{" "}
+          <br />I studied Economics at{" "}
           <a
             className="hyperlink"
             href="https://home.dartmouth.edu"
@@ -110,7 +109,7 @@ export default function JourneySection() {
           >
             Dartmouth College
           </a>
-          . That&apos;s where I discovered my passion for understanding human
+          , which is where I discovered my passion for understanding human
           decision-making, and how technology can meaningfully improve
           people&apos;s lives.
         </div>

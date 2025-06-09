@@ -57,111 +57,112 @@ export default function Contact() {
   }
 
   return (
-    <div className="animate-fade-in flex flex-col justify-start w-full items-center">
-      <div className="px-5 md:px-10 lg:px-12 pb-18 pt-[58px] lg:pt-40 flex flex-col gap-12 w-full max-w-[800px] items-start">
-        {/* Header */}
-        <div className="flex flex-col gap-3">
-          <div className="page-title">Get in touch</div>
-          <div className="flex gap-1 items-center">
-            <div className="page-subtitle">Let&apos;s connect, just reach out!</div>
+    <div className="min-h-screen">
+      <div className="animate-fade-in max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
+        {/* Header Section with improved styling */}
+        <div className="text-center mb-16">
+          <h1 className="text-4xl sm:text-5xl font-bold bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent mb-4">
+            Let&apos;s Connect
+          </h1>
+          <div className="flex items-center justify-center gap-2 text-gray-400">
+            <p className="text-lg">Open for opportunities and collaborations</p>
             <TooltipProvider>
               <Tooltip>
                 <TooltipTrigger asChild>
-                  <Info className="h-3 w-3 page-subtitle stroke-[1.5]" />
+                  <Info className="h-5 w-5 cursor-pointer hover:text-white transition-colors" />
                 </TooltipTrigger>
-                <TooltipContent className="bg-white text-black font-medium">
+                <TooltipContent className="bg-zinc-800 text-white border-zinc-700">
                   Built with Resend
                 </TooltipContent>
               </Tooltip>
             </TooltipProvider>
           </div>
         </div>
-        {/* Contact Form */}
-        <form onSubmit={handleSubmit} className="flex flex-col gap-4 w-full">
-          <div className="flex flex-col">
-            <div className="flex flex-col md:flex-row gap-3">
-              <Input
-                type="text"
-                placeholder="Name"
+
+        <div className="grid lg:grid-cols-2 gap-12">
+          {/* Contact Form Section */}
+          <div className="backdrop-blur-sm bg-white/5 p-8 rounded-2xl border border-white/10">
+            <form onSubmit={handleSubmit} className="space-y-6">
+              <div className="grid sm:grid-cols-2 gap-4">
+                <Input
+                  type="text"
+                  placeholder="Name"
+                  required
+                  className="bg-white/5 border-white/10 rounded-lg h-12 focus-visible:ring-2 focus-visible:ring-white/20 transition-all"
+                  value={formData.name}
+                  onChange={(e) =>
+                    setFormData({ ...formData, name: e.target.value })
+                  }
+                />
+                <Input
+                  type="email"
+                  placeholder="Email"
+                  required
+                  className="bg-white/5 border-white/10 rounded-lg h-12 focus-visible:ring-2 focus-visible:ring-white/20 transition-all"
+                  value={formData.email}
+                  onChange={(e) =>
+                    setFormData({ ...formData, email: e.target.value })
+                  }
+                />
+              </div>
+              <Textarea
+                placeholder="Your message"
                 required
-                className="w-full bg-[#242424] border-0 h-11 focus-visible:ring-0"
-                value={formData?.name}
+                className="bg-white/5 border-white/10 rounded-lg h-48 focus-visible:ring-2 focus-visible:ring-white/20 transition-all resize-none"
+                value={formData.message}
                 onChange={(e) =>
-                  setFormData({ ...formData, name: e.target.value })
+                  setFormData({ ...formData, message: e.target.value })
                 }
               />
-              <Input
-                type="text"
-                placeholder="Email"
-                required
-                className="w-full bg-[#242424] border-0 h-11 focus-visible:ring-0"
-                value={formData?.email}
-                onChange={(e) =>
-                  setFormData({ ...formData, email: e.target.value })
-                }
+              <Button
+                type="submit"
+                className="w-full bg-gradient-to-r from-white to-gray-300 text-black font-semibold h-12 rounded-lg hover:opacity-90 transition-all"
+                disabled={isLoading}
+                label={isLoading ? "Sending..." : "Send Message"}
               />
+            </form>
+          </div>
+
+          {/* Contact Info Section */}
+          <div className="backdrop-blur-sm bg-white/5 p-8 rounded-2xl border border-white/10">
+            <h2 className="text-2xl font-semibold mb-8 text-white">
+              Contact Information
+            </h2>
+            <div className="space-y-6">
+              {contactInfoItems.map((item) => (
+                <div
+                  key={item.label}
+                  className="group flex items-center gap-4 p-4 rounded-lg hover:bg-white/5 transition-all"
+                >
+                  <div className="flex items-center gap-3">
+                    <div className="p-2 rounded-full bg-white/10 group-hover:bg-white/20 transition-all">
+                      <img
+                        src={item.icon}
+                        alt={item.label}
+                        width={20}
+                        height={20}
+                        className="opacity-70 group-hover:opacity-100"
+                      />
+                    </div>
+                    <span className="text-gray-400 group-hover:text-white">
+                      {item.label}
+                    </span>
+                  </div>
+                  <div className="border-t border-white/10 flex-1 mx-4" />
+                  <a
+                    href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-400 hover:text-white truncate transition-all"
+                  >
+                    {item.value}
+                  </a>
+                </div>
+              ))}
             </div>
-          </div>
-          <div className="flex gap-3">
-            <Textarea
-              placeholder="Message"
-              required
-              className="w-full bg-[#242424] border-0 h-40 focus-visible:ring-0"
-              value={formData?.message}
-              onChange={(e) =>
-                setFormData({ ...formData, message: e.target.value })
-              }
-            />
-          </div>
-          <Button
-            type="submit"
-            variant="default"
-            className="w-full bg-[#e0e0e0] text-black font-semibold transition-all duration-150 text-sm h-11 active:opacity-50"
-            label={"Send Message"}
-            isLoading={isLoading}
-          />
-        </form>
-        {/* Footer */}
-        <div className="flex flex-col gap-6 w-full">
-          <div>Contact Info</div>
-          <div className="flex flex-col gap-4">
-            {contactInfoItems.map((contactInfoItem) => (
-              <ContactInfoItem
-                key={contactInfoItem.label}
-                contactInfoItem={contactInfoItem}
-              />
-            ))}
           </div>
         </div>
       </div>
-    </div>
-  );
-}
-
-function ContactInfoItem({
-  contactInfoItem,
-}: {
-  contactInfoItem: (typeof contactInfoItems)[number];
-}) {
-  return (
-    <div className="flex gap-4 w-full">
-      <div className="flex gap-2">
-        <img
-          src={contactInfoItem.icon}
-          alt={contactInfoItem.label}
-          width={16}
-          height={16}
-        />
-        <div>{contactInfoItem.label}</div>
-      </div>
-      <div className="border-.5 border-b border-white/12 border-dashed self-center flex-1" />
-      <a
-        href={contactInfoItem.href}
-        target="_blank"
-        className="text-white/60 cursor-pointer hover:text-white hover:underline decoration-transparent hover:decoration-white transition-all duration-500 truncate"
-      >
-        {contactInfoItem.value}
-      </a>
     </div>
   );
 }

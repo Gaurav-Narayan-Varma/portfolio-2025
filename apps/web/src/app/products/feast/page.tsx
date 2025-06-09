@@ -2,7 +2,6 @@ import FeastAdmin from "@/components/projects/feast/feast-admin";
 import FeastAuth from "@/components/projects/feast/feast-auth";
 import FeastBackground from "@/components/projects/feast/feast-background";
 import FeastBookingFlow from "@/components/projects/feast/feast-booking-flow";
-import FeastGrowth from "@/components/projects/feast/feast-growth";
 import FeastIntro from "@/components/projects/feast/feast-intro";
 import FeastOnboarding from "@/components/projects/feast/feast-onboarding";
 import FeastTechStack from "@/components/projects/feast/feast-techstack";
@@ -36,10 +35,6 @@ export default function Feast() {
       <HorizontalRule />
 
       <FeastBookingFlow />
-
-      <HorizontalRule />
-
-      <FeastGrowth />
     </div>
   );
 }

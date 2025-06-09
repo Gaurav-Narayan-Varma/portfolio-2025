@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function ContactMe() {
   return (
     <Link href="/contact" className="cursor-default max-w-fit">
-      <div className="flex gap-1.5 items-center py-2 px-4 rounded-md bg-ds-gray-100 max-w-fit border border-white/[.12] hover:bg-ds-gray-800 transition-colors duration-150 group">
+      <div className="flex gap-1.5 items-center py-2 px-4 rounded-md bg-[#1a1a2e] max-w-fit border border-[#232347] hover:bg-[#232347] transition-colors duration-150 group">
         <img
           src="/icons/mail.svg"
           alt="Mail"

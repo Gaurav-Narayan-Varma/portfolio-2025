@@ -1,6 +1,6 @@
 "use client";
 
-import { MessageCircle } from "lucide-react";
+import { Home, Mail, MessageCircle, Package, Wrench } from "lucide-react";
 import { usePathname } from "next/navigation";
 import NavItem from "./nav-item";
 import UserProfileCard from "./profile-chip";
@@ -8,30 +8,27 @@ import UserProfileCard from "./profile-chip";
 export const mainNavItems = [
   {
     href: "/",
-    icon: "/home.svg",
+    icon: <Home className="w-4 h-4 opacity-80" />,
     label: "Home",
-  },
-  {
-    href: "/projects",
-    icon: "/projects.svg",
-    label: "Projects",
   },
   {
     href: "/chat",
     icon: <MessageCircle className="w-4 h-4 opacity-80" />,
-    label: "Chat",
+    label: "GauravGPT",
   },
   {
-    href: "/stack",
-    icon: "/stack.svg",
-    label: "Stack",
+    href: "/products",
+    icon: <Package className="w-4 h-4 opacity-80" />,
+    label: "Products",
   },
-];
-
-export const connectNavItems = [
+  {
+    href: "/tools",
+    icon: <Wrench className="w-4 h-4 opacity-80" />,
+    label: "Tools",
+  },
   {
     href: "/contact",
-    icon: "/contact.svg",
+    icon: <Mail className="w-4 h-4 opacity-80" />,
     label: "Contact",
   },
   {
@@ -66,23 +63,6 @@ export default function Sidebar() {
             ))}
           </div>
         </div>
-
-        {/* Connect Navigation */}
-        <div className="flex flex-col gap-4">
-          <div className="text-[13px] text-white/40 font-medium -tracking-[0.26px] leading-[13px] pl-2.5">
-            Connect
-          </div>
-          <div className="flex flex-col gap-1">
-            {connectNavItems.map((item) => (
-              <NavItem
-                key={item.href}
-                {...item}
-                isActive={pathname === item.href}
-                isExternalLink={item.href.startsWith("http")}
-              />
-            ))}
-          </div>
-        </div>
       </div>
       {/* Creates and triggers a temporary download link */}
       {/* This approach prevents the download URL from showing in the browser's status bar on hover */}
@@ -95,7 +75,7 @@ export default function Sidebar() {
           link.click();
           document.body.removeChild(link);
         }}
-        className="bg-ds-gray-500 cursor-default border border-white/[15%] rounded-[5px] h-10.5 flex items-center justify-center gap-2 opacity-80 hover:opacity-100 hover:bg-ds-gray-600 transition-all duration-150 shadow-[inset_0px_0.557334px_1.672px_-1.125px_rgba(255,255,255,0.07),_inset_0px_1.69015px_5.07046px_-2.25px_rgba(255,255,255,0.063),_inset_0px_4.46786px_13.4036px_-3.375px_rgba(255,255,255,0.05),_inset_0px_14px_42px_-4.5px_rgba(255,255,255,0.008)] active:bg-ds-gray-200"
+        className="bg-[#1a1a2e] cursor-default border border-[#232347] rounded-[5px] h-10.5 flex items-center justify-center gap-2 opacity-80 hover:opacity-100 hover:bg-[#232347] transition-all duration-150 shadow-[inset_0px_0.557334px_1.672px_-1.125px_rgba(255,255,255,0.07),_inset_0px_1.69015px_5.07046px_-2.25px_rgba(255,255,255,0.063),_inset_0px_4.46786px_13.4036px_-3.375px_rgba(255,255,255,0.05),_inset_0px_14px_42px_-4.5px_rgba(255,255,255,0.008)] active:bg-ds-gray-200"
       >
         <img src="/icons/download.svg" alt="Download" className="h-5 w-5" />
         <div className="-tracking-[0.14px] leading-[21px] font-medium text-sm">
