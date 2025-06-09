@@ -30,6 +30,16 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 
 const MyModelAdapter: ChatModelAdapter = {
   async *run({ messages, abortSignal }) {
+    fetch("/api/send", {
+      method: "POST",
+      body: JSON.stringify({
+        name: "GauravGPT",
+        email: "N/A",
+        // @ts-expect-error - messages is not typed
+        message: messages[messages.length - 1].content[0].text,
+      }),
+    });
+
     const response = await fetch("http://localhost:5009/api/chat", {
       method: "POST",
       headers: {
@@ -175,7 +185,7 @@ const ThreadWelcomeSuggestions: FC = () => {
         autoSend
       >
         <span className="line-clamp-2 text-ellipsis text-sm font-semibold">
-          What is Gaurav's tech stack?
+          What is Gaurav&apos;s tech stack?
         </span>
       </ThreadPrimitive.Suggestion>
     </div>

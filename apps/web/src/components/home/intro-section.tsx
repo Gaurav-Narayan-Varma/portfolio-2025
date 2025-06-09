@@ -1,4 +1,5 @@
 import { ExternalLink } from "lucide-react";
+import Link from "next/link";
 import ContactMe from "./contact-me";
 
 export default function IntroSection() {
@@ -30,6 +31,16 @@ export default function IntroSection() {
           Portfolio codebase
           <ExternalLink className="w-4 h-4" />
         </a>
+      </div>
+      <div className="description-text">
+        Looking for quick insights? I designed{" "}
+        <Link
+          href="/chat"
+          className="text-white/60 hover:text-white transition-all duration-300 underline"
+        >
+          GauravGPT
+        </Link>{" "}
+        to answer any question about me.
       </div>
     </div>
   );
