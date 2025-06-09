@@ -10,7 +10,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "predev": "docker compose up -d",
-    "dev": "concurrently \"nodemon --exec 'tsc -b && tsc-alias' --watch src --ext ts\" \"nodemon --exec 'tsx src/server.ts' --watch src --ext ts\""
+    "dev": "concurrently \"nodemon --exec 'tsc -b && tsc-alias' --watch src --ext ts\" \"nodemon --exec 'tsx src/server.ts' --watch src --ext ts\"",
+    "build": "prisma generate && tsc -b && tsc-alias"
   },
   "dependencies": {
     "@pinecone-database/pinecone": "^6.1.0",
@@ -20,6 +21,7 @@
     "cors": "^2.8.5",
     "dotenv": "^16.5.0",
     "express": "^5.1.0",
+    "openai": "^5.1.1",
     "prisma": "^6.9.0",
     "tsc-alias": "^1.8.16"
   },

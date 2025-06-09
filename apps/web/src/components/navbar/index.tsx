@@ -1,5 +1,6 @@
 "use client";
 
+import { MessageCircle } from "lucide-react";
 import { usePathname } from "next/navigation";
 import NavItem from "./nav-item";
 import UserProfileCard from "./profile-chip";
@@ -14,6 +15,11 @@ export const mainNavItems = [
     href: "/projects",
     icon: "/projects.svg",
     label: "Projects",
+  },
+  {
+    href: "/chat",
+    icon: <MessageCircle className="w-4 h-4" />,
+    label: "Chat",
   },
   {
     href: "/stack",

@@ -1,5 +1,8 @@
+import "dotenv/config";
+
 import * as trpcExpress from "@trpc/server/adapters/express";
 import cors, { CorsOptions } from "cors";
+import { sendMessage } from "./procedures/sendMessage.js";
 import { trpcRouter } from "./trpcBase.js";
 
 export const corsOptions: CorsOptions = {
@@ -7,7 +10,10 @@ export const corsOptions: CorsOptions = {
   credentials: true,
   allowedHeaders: ["Content-Type", "Cookie"],
 };
-export const appRouter = trpcRouter({});
+
+export const appRouter = trpcRouter({
+  sendMessage,
+});
 
 export type AppRouter = typeof appRouter;
 

@@ -50,12 +50,12 @@ function NavItem({ href, icon, label, isActive, isExternalLink, onClick, isMobil
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
         href: href,
         target: isExternalLink ? "_blank" : undefined,
-        className: (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$clsx$2f$dist$2f$clsx$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"])("flex gap-2 p-2 cursor-default rounded-md  border border-transparent h-10 group", isActive ? "bg-ds-gray-200 border !border-ds-gray-400 opacity-90 transition-all duration-150" : !isMobile && "opacity-60 hover:bg-ds-gray-100 hover:opacity-90", {
+        className: (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$clsx$2f$dist$2f$clsx$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"])("flex gap-2 p-2 cursor-default rounded-md  border border-transparent h-10 group items-center", isActive ? "bg-ds-gray-200 border !border-ds-gray-400 opacity-90 transition-all duration-150" : !isMobile && "opacity-60 hover:bg-ds-gray-100 hover:opacity-90", {
             "hover:bg-ds-gray-100 active:bg-ds-gray-200": isMobile
         }),
         onClick: onClick,
         children: [
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
+            typeof icon === "string" ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
                 src: `/icons/${icon}`,
                 alt: label,
                 width: 16,
@@ -65,9 +65,9 @@ function NavItem({ href, icon, label, isActive, isExternalLink, onClick, isMobil
                 })
             }, void 0, false, {
                 fileName: "[project]/apps/web/src/components/navbar/nav-item.tsx",
-                lineNumber: 36,
-                columnNumber: 7
-            }, this),
+                lineNumber: 37,
+                columnNumber: 9
+            }, this) : icon,
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$clsx$2f$dist$2f$clsx$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"])("font-medium -tracking-[0.14px] leading-[21px] text-sm text-white", {
                     "!text-base": isMobile,
@@ -76,7 +76,7 @@ function NavItem({ href, icon, label, isActive, isExternalLink, onClick, isMobil
                 children: label
             }, void 0, false, {
                 fileName: "[project]/apps/web/src/components/navbar/nav-item.tsx",
-                lineNumber: 43,
+                lineNumber: 47,
                 columnNumber: 7
             }, this),
             isExternalLink && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
@@ -87,7 +87,7 @@ function NavItem({ href, icon, label, isActive, isExternalLink, onClick, isMobil
                 height: 16
             }, void 0, false, {
                 fileName: "[project]/apps/web/src/components/navbar/nav-item.tsx",
-                lineNumber: 55,
+                lineNumber: 59,
                 columnNumber: 9
             }, this)
         ]
@@ -193,10 +193,12 @@ __turbopack_context__.s({
     "mainNavItems": (()=>mainNavItems)
 });
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react-jsx-dev-runtime.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$message$2d$circle$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__MessageCircle$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/message-circle.js [app-ssr] (ecmascript) <export default as MessageCircle>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/navigation.js [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$web$2f$src$2f$components$2f$navbar$2f$nav$2d$item$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/apps/web/src/components/navbar/nav-item.tsx [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$web$2f$src$2f$components$2f$navbar$2f$profile$2d$chip$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/apps/web/src/components/navbar/profile-chip.tsx [app-ssr] (ecmascript)");
 "use client";
+;
 ;
 ;
 ;
@@ -211,6 +213,17 @@ const mainNavItems = [
         href: "/projects",
         icon: "/projects.svg",
         label: "Projects"
+    },
+    {
+        href: "/chat",
+        icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$message$2d$circle$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__MessageCircle$3e$__["MessageCircle"], {
+            className: "w-4 h-4"
+        }, void 0, false, {
+            fileName: "[project]/apps/web/src/components/navbar/index.tsx",
+            lineNumber: 21,
+            columnNumber: 11
+        }, this),
+        label: "Chat"
     },
     {
         href: "/stack",
@@ -248,7 +261,7 @@ function Sidebar() {
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$web$2f$src$2f$components$2f$navbar$2f$profile$2d$chip$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                                 fileName: "[project]/apps/web/src/components/navbar/index.tsx",
-                                lineNumber: 50,
+                                lineNumber: 56,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -258,18 +271,18 @@ function Sidebar() {
                                         isActive: pathname === item.href
                                     }, item.href, false, {
                                         fileName: "[project]/apps/web/src/components/navbar/index.tsx",
-                                        lineNumber: 55,
+                                        lineNumber: 61,
                                         columnNumber: 15
                                     }, this))
                             }, void 0, false, {
                                 fileName: "[project]/apps/web/src/components/navbar/index.tsx",
-                                lineNumber: 53,
+                                lineNumber: 59,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/apps/web/src/components/navbar/index.tsx",
-                        lineNumber: 49,
+                        lineNumber: 55,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -280,7 +293,7 @@ function Sidebar() {
                                 children: "Connect"
                             }, void 0, false, {
                                 fileName: "[project]/apps/web/src/components/navbar/index.tsx",
-                                lineNumber: 66,
+                                lineNumber: 72,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -291,24 +304,24 @@ function Sidebar() {
                                         isExternalLink: item.href.startsWith("http")
                                     }, item.href, false, {
                                         fileName: "[project]/apps/web/src/components/navbar/index.tsx",
-                                        lineNumber: 71,
+                                        lineNumber: 77,
                                         columnNumber: 15
                                     }, this))
                             }, void 0, false, {
                                 fileName: "[project]/apps/web/src/components/navbar/index.tsx",
-                                lineNumber: 69,
+                                lineNumber: 75,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/apps/web/src/components/navbar/index.tsx",
-                        lineNumber: 65,
+                        lineNumber: 71,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/apps/web/src/components/navbar/index.tsx",
-                lineNumber: 48,
+                lineNumber: 54,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -328,7 +341,7 @@ function Sidebar() {
                         className: "h-5 w-5"
                     }, void 0, false, {
                         fileName: "[project]/apps/web/src/components/navbar/index.tsx",
-                        lineNumber: 94,
+                        lineNumber: 100,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -336,19 +349,19 @@ function Sidebar() {
                         children: "Resume"
                     }, void 0, false, {
                         fileName: "[project]/apps/web/src/components/navbar/index.tsx",
-                        lineNumber: 95,
+                        lineNumber: 101,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/apps/web/src/components/navbar/index.tsx",
-                lineNumber: 83,
+                lineNumber: 89,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/apps/web/src/components/navbar/index.tsx",
-        lineNumber: 47,
+        lineNumber: 53,
         columnNumber: 5
     }, this);
 }
