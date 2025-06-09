@@ -1,8 +1,4 @@
-import pc from "../src/utils/pinecone.ts";
-
-const indexName = "portfolio-index";
-
-const index = pc.index(indexName).namespace("ns1");
+import { index } from "../src/utils/pinecone.js";
 
 const query = "What did Gaurav work on at Feast?";
 

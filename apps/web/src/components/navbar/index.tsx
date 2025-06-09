@@ -18,7 +18,7 @@ export const mainNavItems = [
   },
   {
     href: "/chat",
-    icon: <MessageCircle className="w-4 h-4" />,
+    icon: <MessageCircle className="w-4 h-4 opacity-80" />,
     label: "Chat",
   },
   {

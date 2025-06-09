@@ -29,16 +29,24 @@ import { Button } from "@/components/ui/button-default";
 import { TooltipProvider } from "@/components/ui/tooltip";
 
 const MyModelAdapter: ChatModelAdapter = {
-  async *run({ messages, abortSignal, context }) {
-    const stream = await fetch("http://localhost:5009/trpc/sendMessage", {
-      method: "GET",
+  async *run({ messages, abortSignal }) {
+    const response = await fetch("http://localhost:5009/api/chat", {
+      method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
+      credentials: "include",
       signal: abortSignal,
+      body: JSON.stringify({
+        messages: messages,
+      }),
     });
 
-    const reader = stream.body?.getReader();
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+
+    const reader = response.body?.getReader();
     if (!reader) return;
 
     const decoder = new TextDecoder();
@@ -51,35 +59,25 @@ const MyModelAdapter: ChatModelAdapter = {
 
       buffer += decoder.decode(value, { stream: true });
 
-      // Process complete SSE messages
       const lines = buffer.split("\n");
-      buffer = lines.pop() || ""; // Keep the last incomplete line in the buffer
+      buffer = lines.pop() || "";
 
       for (const line of lines) {
-        if (!line.trim()) continue;
+        if (!line.trim() || !line.startsWith("data: ")) continue;
 
-        if (line.startsWith("data: ")) {
-          try {
-            const jsonStr = line.slice(6).trim(); // Remove 'data: ' prefix and whitespace
+        try {
+          const jsonStr = line.slice(6).trim();
+          const data = JSON.parse(jsonStr);
 
-            // Skip if the JSON string is empty
-            if (!jsonStr) continue;
-
-            console.log("Attempting to parse JSON:", jsonStr);
-
-            const data = JSON.parse(jsonStr);
-            if (data && data.message) {
-              accumulatedText += data.message + " ";
-
-              yield {
-                content: [{ type: "text", text: accumulatedText.trim() }],
-              };
-            }
-          } catch (error) {
-            console.error("Error parsing JSON:", error);
-            console.error("Problematic line:", line);
-            continue; // Skip this line and continue with the next one
+          if (data?.message) {
+            accumulatedText += data.message;
+            yield {
+              content: [{ type: "text", text: accumulatedText.trim() }],
+            };
           }
+        } catch (error) {
+          console.error("Error parsing JSON:", error);
+          continue;
         }
       }
     }
@@ -101,12 +99,12 @@ export default function ChatPage() {
 function Thread() {
   return (
     <ThreadPrimitive.Root
-      className="bg-background box-border flex h-screen flex-col overflow-hidden w-full animate-fade-in"
+      className="bg-background box-border flex h-[calc(100vh-71.05px)] lg:h-screen flex-col overflow-hidden w-full animate-fade-in"
       style={{
         ["--thread-max-width" as string]: "42rem",
       }}
     >
-      <ThreadPrimitive.Viewport className="flex h-full flex-col items-center overflow-y-scroll scroll-smooth bg-inherit px-4 py-8">
+      <ThreadPrimitive.Viewport className="flex h-full flex-col items-center overflow-y-scroll scroll-smooth bg-inherit px-4 py-4 lg:py-8">
         <ThreadWelcome />
 
         <ThreadPrimitive.Messages

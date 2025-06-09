@@ -4,16 +4,34 @@ import NavItem from "@/components/navbar/nav-item";
 import UserProfileCard from "@/components/navbar/profile-chip";
 import cx from "clsx";
 import { MenuIcon, X } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export default function NavbarMobile() {
   const [isOpen, setIsOpen] = useState(false);
+  const navbarMobileRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (
+        navbarMobileRef.current &&
+        !navbarMobileRef.current.contains(event.target as Node)
+      ) {
+        setIsOpen(false);
+      }
+    }
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   return (
     <div
       className={cx("fixed w-full px-5 py-3.5 lg:hidden bg-ds-gray-500 z-50", {
         "border-b rounded-b-xl border-b-ds-gray-600": isOpen,
       })}
+      ref={navbarMobileRef}
     >
       <div className="flex justify-between items-center">
         <UserProfileCard setIsOpen={setIsOpen} />
