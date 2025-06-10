@@ -2,7 +2,6 @@ import HorizontalRule from "@/components/projects/horizontal-rule";
 import YhangryIntro from "@/components/projects/yhangry/yhangry-intro";
 import YhangryProblem from "@/components/projects/yhangry/yhangry-problem";
 import YhangrySolution from "@/components/projects/yhangry/yhangry-solution";
-import YhangryImpact from "@/components/projects/yhangry/yhangry-impact";
 
 export default function Yhangry() {
   return (
@@ -16,10 +15,6 @@ export default function Yhangry() {
       <HorizontalRule />
 
       <YhangrySolution />
-
-      <HorizontalRule />
-
-      <YhangryImpact />
     </div>
   );
 }
