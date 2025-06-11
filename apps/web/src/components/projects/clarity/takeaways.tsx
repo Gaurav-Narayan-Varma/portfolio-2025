@@ -6,9 +6,9 @@ export default function Takeaways() {
     <>
       <SectionOverview
         title="The Journey"
-        paragraph1="Working at Clarity alongside such great team members has been a transformative experience. We have accomplished so much in such a short time, and I strongly believe that we are expiditing innovation in the meeting notetaking space."
-        paragraph2="Clarity has taught me so much about building products that people love and using a vigorous process to test and iterate on product and design ideas."
-        paragraph3="To our users, the Claritons – thank you for your dedication to innovation and for trusting us to be part of your journey. Your work continues to inspire and drive us forward."
+        paragraph1="My time at Clarity has been an incredible journey of growth and collaboration with exceptional colleagues. In this short period, we've made remarkable strides, pioneering new approaches to revolutionize how people capture and manage meeting notes."
+        paragraph2="Through my experience at Clarity, I've gained invaluable insights into creating user-centric products. The company's methodical approach to product development and design iteration has been enlightening."
+        paragraph3="A heartfelt thank you to our dedicated users – the Claritons. Your innovative spirit and confidence in our platform motivates us to push boundaries and strive for excellence."
       />
       <MediaDisplay
         src="/clarity-project/bird-rock.png"
