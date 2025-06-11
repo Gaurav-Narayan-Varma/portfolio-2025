@@ -2,25 +2,19 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "@/components/ui/tooltip";
-import { Info } from "lucide-react";
+import { Linkedin, Mail, MapPin } from "lucide-react"; // Added Lucide icons
 import { useState } from "react";
 import { toast } from "react-hot-toast";
 
 const contactInfoItems = [
   {
-    icon: "/icons/linkedin.svg",
+    icon: Linkedin,
     label: "LinkedIn",
     value: "/gaurav-varma-fullstack-engineer",
     href: "https://www.linkedin.com/in/gaurav-varma-fullstack-engineer",
   },
   {
-    icon: "/icons/location.svg",
+    icon: MapPin,
     label: "Location",
     value: "San Francisco",
     href: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgIG0iG1SNA7RsryE2G6ucTL4zbNsEolujOulgOwkehZTraTMyiNN0E9Dr3peWGtOxw4r5jgdgiBoP-OWY8DgFG8FcY7wlz_zVaxBE0RSvTtEOeCQ5YhScu-4bwyw1fXZED6hyphenhyphenxwaUoGXOz/s900/Edit-San-Francisco-German-Tour-0132.JPG",
@@ -57,108 +51,101 @@ export default function Contact() {
   }
 
   return (
-    <div className="min-h-screen">
-      <div className="animate-fade-in max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
-        {/* Header Section with improved styling */}
-        <div className="text-center mb-16">
-          <h1 className="text-4xl sm:text-5xl font-bold bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent mb-4">
-            Let&apos;s Connect
+    <div className="min-h-screen relative overflow-hidden">
+      {/* Background gradient effect */}
+      <div className="absolute inset-0 pointer-events-none" />
+      <div className="absolute inset-0 backdrop-blur-[100px]" />
+
+      <div className="relative animate-fade-in max-w-7xl mx-auto px-6 lg:px-8 py-24">
+        {/* Header Section */}
+        <div className="text-center mb-20">
+          <h1 className="text-5xl sm:text-6xl font-bold mb-6">
+            Let&apos;s Create Together
           </h1>
-          <div className="flex items-center justify-center gap-2 text-gray-400">
-            <p className="text-lg">Open for opportunities and collaborations</p>
-            <TooltipProvider>
-              <Tooltip>
-                <TooltipTrigger asChild>
-                  <Info className="h-5 w-5 cursor-pointer hover:text-white transition-colors" />
-                </TooltipTrigger>
-                <TooltipContent className="bg-zinc-800 text-white border-zinc-700">
-                  Built with Resend
-                </TooltipContent>
-              </Tooltip>
-            </TooltipProvider>
-          </div>
+          <p className="text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed">
+            Open for exciting opportunities and innovative collaborations.
+            Let&apos;s turn ideas into reality.
+          </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
+        <div className="grid lg:grid-cols-5 gap-8 items-start">
           {/* Contact Form Section */}
-          <div className="backdrop-blur-sm bg-white/5 p-8 rounded-2xl border border-white/10">
+          <div className="lg:col-span-3 backdrop-blur-md bg-white/5 p-8 rounded-2xl border border-white/10 hover:border-white/20 transition-all">
             <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid sm:grid-cols-2 gap-4">
-                <Input
-                  type="text"
-                  placeholder="Name"
+              <div className="grid sm:grid-cols-2 gap-6">
+                <div className="flex flex-col gap-2">
+                  <label className="text-sm text-gray-400">Your Name</label>
+                  <Input
+                    type="text"
+                    required
+                    className="bg-white/5 border-white/10 rounded-lg h-12 focus-visible:ring-2 focus-visible:ring-purple-400/50 transition-all"
+                    value={formData.name}
+                    onChange={(e) =>
+                      setFormData({ ...formData, name: e.target.value })
+                    }
+                  />
+                </div>
+                <div className="flex flex-col gap-2">
+                  <label className="text-sm text-gray-400">Your Email</label>
+                  <Input
+                    type="email"
+                    required
+                    className="bg-white/5 border-white/10 rounded-lg h-12 focus-visible:ring-2 focus-visible:ring-purple-400/50 transition-all"
+                    value={formData.email}
+                    onChange={(e) =>
+                      setFormData({ ...formData, email: e.target.value })
+                    }
+                  />
+                </div>
+              </div>
+              <div className="flex flex-col gap-2">
+                <label className="text-sm text-gray-400">Your Message</label>
+                <Textarea
                   required
-                  className="bg-white/5 border-white/10 rounded-lg h-12 focus-visible:ring-2 focus-visible:ring-white/20 transition-all"
-                  value={formData.name}
+                  className="bg-white/5 border-white/10 rounded-lg h-48 focus-visible:ring-2 focus-visible:ring-purple-400/50 transition-all resize-none"
+                  value={formData.message}
                   onChange={(e) =>
-                    setFormData({ ...formData, name: e.target.value })
-                  }
-                />
-                <Input
-                  type="email"
-                  placeholder="Email"
-                  required
-                  className="bg-white/5 border-white/10 rounded-lg h-12 focus-visible:ring-2 focus-visible:ring-white/20 transition-all"
-                  value={formData.email}
-                  onChange={(e) =>
-                    setFormData({ ...formData, email: e.target.value })
+                    setFormData({ ...formData, message: e.target.value })
                   }
                 />
               </div>
-              <Textarea
-                placeholder="Your message"
-                required
-                className="bg-white/5 border-white/10 rounded-lg h-48 focus-visible:ring-2 focus-visible:ring-white/20 transition-all resize-none"
-                value={formData.message}
-                onChange={(e) =>
-                  setFormData({ ...formData, message: e.target.value })
-                }
-              />
               <Button
+                label="Send Message"
                 type="submit"
-                className="w-full bg-gradient-to-r from-white to-gray-300 text-black font-semibold h-12 rounded-lg hover:opacity-90 transition-all"
-                disabled={isLoading}
-                label={isLoading ? "Sending..." : "Send Message"}
+                className="w-full text-white font-semibold h-12 rounded-lg hover:opacity-90 transition-all bg-gradient-to-r from-purple-500 to-blue-500"
+                isLoading={isLoading}
+                leftIcon={<Mail className="w-4 h-4" />}
               />
             </form>
           </div>
 
-          {/* Contact Info Section */}
-          <div className="backdrop-blur-sm bg-white/5 p-8 rounded-2xl border border-white/10">
-            <h2 className="text-2xl font-semibold mb-8 text-white">
-              Contact Information
-            </h2>
-            <div className="space-y-6">
-              {contactInfoItems.map((item) => (
-                <div
-                  key={item.label}
-                  className="group flex items-center gap-4 p-4 rounded-lg hover:bg-white/5 transition-all"
-                >
-                  <div className="flex items-center gap-3">
-                    <div className="p-2 rounded-full bg-white/10 group-hover:bg-white/20 transition-all">
-                      <img
-                        src={item.icon}
-                        alt={item.label}
-                        width={20}
-                        height={20}
-                        className="opacity-70 group-hover:opacity-100"
-                      />
-                    </div>
-                    <span className="text-gray-400 group-hover:text-white">
-                      {item.label}
-                    </span>
-                  </div>
-                  <div className="border-t border-white/10 flex-1 mx-4" />
-                  <a
-                    href={item.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-gray-400 hover:text-white truncate transition-all"
+          {/* Contact Info Section - Now on the left */}
+          <div className="lg:col-span-2 space-y-8">
+            <div className="backdrop-blur-md bg-white/5 p-8 rounded-2xl border border-white/10 hover:border-white/20 transition-all">
+              <h2 className="text-2xl font-semibold mb-8">Connect With Me</h2>
+              <div className="space-y-6">
+                {contactInfoItems.map((item) => (
+                  <div
+                    key={item.label}
+                    className="group hover:scale-105 transition-all duration-300"
                   >
-                    {item.value}
-                  </a>
-                </div>
-              ))}
+                    <a
+                      href={item.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-4 p-4 rounded-xl bg-white/5 hover:bg-white/10 transition-all"
+                    >
+                      <div className="p-3 rounded-lg bg-gradient-to-br from-purple-500/20 to-blue-500/20">
+                        <item.icon className="w-5 h-5 text-white" />
+                      </div>
+                      <div>
+                        <p className="text-sm text-gray-400">{item.label}</p>
+                        <p className="text-white font-medium">{item.value}</p>
+                      </div>
+                    </a>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>

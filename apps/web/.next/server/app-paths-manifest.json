@@ -4,9 +4,6 @@
   "/contact/page": "app/contact/page.js",
   "/favicon.ico/route": "app/favicon.ico/route.js",
   "/page": "app/page.js",
-  "/products/clarity/page": "app/products/clarity/page.js",
-  "/products/feast/page": "app/products/feast/page.js",
   "/products/page": "app/products/page.js",
-  "/projects/page": "app/projects/page.js",
   "/tools/page": "app/tools/page.js"
 }
