@@ -9,12 +9,23 @@ export default function IntroSection() {
           I&apos;m Gaurav, and I create software that matters.
         </div>
         <div className="description-text">
-          I&apos;ve built products from 0 to 1 that have impacted thousands of
-          peoples&apos; lives. I care deeply about craft, product excellence,
-          and the impact of my work. Currently, I build as a founding engineer
-          at Clarity in San Francisco. Previously, I&apos;ve built products at
+          Throughout my career, I've taken multiple products from concept to
+          launch, touching the lives of thousands. My work is driven by a
+          commitment to craftsmanship and delivering exceptional products that
+          make a difference. I'm currently working as a founding engineer at
+          Clarity in San Francisco, with prior experience building products at
           Yhangry and Fleek.
         </div>
+      </div>
+      <div className="description-text">
+        Want to know more? I designed{" "}
+        <Link
+          href="/chat"
+          className="text-white/60 hover:text-white transition-all duration-300 underline"
+        >
+          GauravGPT
+        </Link>{" "}
+        to answer any question about me.
       </div>
       <div className="flex justify-between items-end">
         <a
@@ -26,16 +37,6 @@ export default function IntroSection() {
           Portfolio codebase
           <ExternalLink className="w-4 h-4" />
         </a>
-      </div>
-      <div className="description-text">
-        Looking for quick insights? I designed{" "}
-        <Link
-          href="/chat"
-          className="text-white/60 hover:text-white transition-all duration-300 underline"
-        >
-          GauravGPT
-        </Link>{" "}
-        to answer any question about me.
       </div>
     </div>
   );
