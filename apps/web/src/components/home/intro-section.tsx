@@ -9,10 +9,10 @@ export default function IntroSection() {
           I&apos;m Gaurav, and I create software that matters.
         </div>
         <div className="description-text">
-          Throughout my career, I've taken multiple products from concept to
+          Throughout my career, I&apos;ve taken multiple products from concept to
           launch, touching the lives of thousands. My work is driven by a
           commitment to craftsmanship and delivering exceptional products that
-          make a difference. I'm currently working as a founding engineer at
+          make a difference. I&apos;m currently working as a founding engineer at
           Clarity in San Francisco, with prior experience building products at
           Yhangry and Fleek.
         </div>
