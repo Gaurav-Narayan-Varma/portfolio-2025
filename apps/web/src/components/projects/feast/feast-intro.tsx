@@ -8,7 +8,7 @@ export default function FeastIntro() {
 
       <SectionOverview
         title="Feast"
-        subTitle1="Founding Engineer"
+        subTitle1="Software Engineer"
         subTitle2="Chef Booking Platform"
         link="https://github.com/Gaurav-Narayan-Varma/feast"
         paragraph1="Building on my experience at Yhangry, a UK luxury chef marketplace, I partnered with Feast to create an affordable private chef platform for NYC, making healthy home dining accessible to everyday Americans."

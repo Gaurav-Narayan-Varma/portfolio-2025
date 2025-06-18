@@ -36,7 +36,7 @@ const feastFrontendStack = [
     icon: <img src="/logos/tailwind-logo-sm.png" alt="Tailwind CSS" />,
     href: "",
     description:
-      "As a founding engineer, I prioritized long-term developer productivity at Feast. Tailwind's co-located styling approach reduces the complexity of managing separate CSS files, allowing engineers to iterate faster and maintain consistency across the application as our team scales.",
+      "As the sole engineer at Feast, I prioritized long-term developer productivity. Tailwind's co-located styling approach reduces the complexity of managing separate CSS files, allowing engineers to iterate faster and maintain consistency across the application as our team scales.",
   },
 ];
 

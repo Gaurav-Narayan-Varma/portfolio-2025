@@ -12,7 +12,7 @@ export default function IntroSection() {
           Throughout my career, I&apos;ve taken multiple products from concept to
           launch, touching the lives of thousands. My work is driven by a
           commitment to craftsmanship and delivering exceptional products that
-          make a difference. I&apos;m currently working as a founding engineer at
+          make a difference. I&apos;m currently working as a software engineer at
           Clarity in San Francisco, with prior experience building products at
           Yhangry and Fleek.
         </div>

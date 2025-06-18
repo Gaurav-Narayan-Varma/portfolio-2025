@@ -18,7 +18,7 @@ const milestones: Milestone[] = [
   {
     image: "/logos/clarity-logo.jpeg",
     company: "Clarity",
-    role: "Founding Engineer",
+    role: "Software Engineer",
     duration: "2024 - Present",
     type: "single",
   },

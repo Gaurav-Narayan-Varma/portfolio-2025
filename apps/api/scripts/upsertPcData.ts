@@ -4,19 +4,19 @@ const records = [
   {
     _id: "rec1",
     chunk_text:
-      "Hey, I'm Gaurav. I build software. I've built products from 0 to 1 that have impacted thousands of peoples' lives. I care deeply about craft, product excellence, and the impact of my work. Currently, I build as a founding engineer at Clarity in San Francisco. Previously, I've built products at Yhangry and Fleek.",
+      "Hey, I'm Gaurav. I build software. I've built products from 0 to 1 that have impacted thousands of peoples' lives. I care deeply about craft, product excellence, and the impact of my work. Currently, I build as a software engineer at Clarity in San Francisco. Previously, I've built products at Yhangry and Fleek.",
     category: "overview",
   },
   {
     _id: "rec2",
     chunk_text:
-      "Who Gaurav is. I'm an engineer by trade, but I'm most passionate about building great products, whether that's listening to users, shipping features, or project planning. Right now, I build as a founding engineer at Clarity, a startup focused on innovating AI note taking technology. Previously, I was a full stack engineer at top startups, from Yhangry to Fleek, where I led the development of Fleek's gift card system end-to-end. Before that, I consulted C-Suite leaders at Liberty Mutual on integrating AI into their business. Once upon a time, I studied Economics at Dartmouth College. That's where I discovered my passion for understanding human decision-making, and how technology can meaningfully improve people's lives.",
+      "Who Gaurav is. I'm an engineer by trade, but I'm most passionate about building great products, whether that's listening to users, shipping features, or project planning. Right now, I build as a software engineer at Clarity, a startup focused on innovating AI note taking technology. Previously, I was a full stack engineer at top startups, from Yhangry to Fleek, where I led the development of Fleek's gift card system end-to-end. Before that, I consulted C-Suite leaders at Liberty Mutual on integrating AI into their business. Once upon a time, I studied Economics at Dartmouth College. That's where I discovered my passion for understanding human decision-making, and how technology can meaningfully improve people's lives.",
     category: "overview",
   },
   {
     _id: "rec3",
     chunk_text:
-      "Clarity: Desktop Web App. Gaurav's role: Founding Engineer. I've spent the past year building the future of meeting intelligence at Clarity in SF. We're focused on helping high-performance operators capture and leverage every detail from their meetings through AI-powered transcription, actionable insights, and seamless integrations.",
+      "Clarity: Desktop Web App. Gaurav's role: Software Engineer. I've spent the past year building the future of meeting intelligence at Clarity in SF. We're focused on helping high-performance operators capture and leverage every detail from their meetings through AI-powered transcription, actionable insights, and seamless integrations.",
     category: "clarity",
   },
   {
@@ -52,7 +52,7 @@ const records = [
   {
     _id: "rec9",
     chunk_text:
-      "Feast: Chef Booking Platform. Gaurav's role: Founding Engineer. Building on my experience at Yhangry, a UK luxury chef marketplace, I partnered with Feast to create an affordable private chef platform for NYC, making healthy home dining accessible to everyday Americans. Through Feast, we're revolutionizing the culinary industry by enabling chefs to build thriving, independent careers while bringing the private dining experience to a broader audience.",
+      "Feast: Chef Booking Platform. Gaurav's role: Software Engineer. Building on my experience at Yhangry, a UK luxury chef marketplace, I partnered with Feast to create an affordable private chef platform for NYC, making healthy home dining accessible to everyday Americans. Through Feast, we're revolutionizing the culinary industry by enabling chefs to build thriving, independent careers while bringing the private dining experience to a broader audience.",
     category: "feast",
   },
   {
