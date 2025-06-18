@@ -66,7 +66,7 @@ export default function JourneySection() {
         <div className="text-white text-base leading-7 -tracking-[0.16] font-medium">
           While I work as an engineer, my true passion lies in product
           development - from understanding user needs and delivering impactful
-          features to strategic planning. Currently, I serve as a founding
+          features to strategic planning. Currently, I serve as a software
           engineer at{" "}
           <a
             href="https://www.adoptclarity.com/"
